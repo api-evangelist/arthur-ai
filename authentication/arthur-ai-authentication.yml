@@ -1,0 +1,52 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/arthur-ai-platform-openapi.json
+docs: https://docs.arthur.ai/docs/authentication.md
+note: >-
+  Arthur uses two distinct auth mechanisms. The Arthur Platform API uses OAuth2
+  via Keycloak (issuer https://platform-auth.arthur.ai/realms/arthur): human
+  flows use device authorization, machine-to-machine uses service-account client
+  credentials (tokens auto-refreshed with a 30s leeway). The self-hosted Arthur
+  Engine / Agent Toolkit uses API keys instead.
+summary:
+  types:
+    - oauth2
+    - apiKey
+  oauth2_flows:
+    - authorizationCode
+    - deviceAuthorization
+    - clientCredentials
+  api_key_scope: Arthur Engine / Agent Toolkit only
+schemes:
+  - name: OAuth2AuthorizationCode
+    type: oauth2
+    component: Arthur Platform
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth
+        tokenUrl: https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token
+        refreshUrl: https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token
+    sources:
+      - openapi/arthur-ai-platform-openapi.json
+  - name: ClientCredentials
+    type: oauth2
+    component: Arthur Platform (service accounts, M2M)
+    flows:
+      - flow: clientCredentials
+        tokenUrl: https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token
+    sources:
+      - https://docs.arthur.ai/docs/authentication.md
+  - name: DeviceAuthorization
+    type: oauth2
+    component: Arthur Platform (human local flows)
+    flows:
+      - flow: deviceCode
+        tokenUrl: https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token
+    sources:
+      - https://docs.arthur.ai/docs/authentication.md
+  - name: ApiKey
+    type: apiKey
+    in: header
+    component: Arthur Engine / Agent Toolkit
+    sources:
+      - https://docs.arthur.ai/docs/authentication.md
