@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/arthur-ai-platform-openapi.json
+note: >-
+  Cross-cutting standards conformance for the Arthur Platform API (Arthur Scope,
+  OpenAPI 3.1.0). Derived from the OpenAPI security schemes, the Keycloak OIDC
+  discovery document, and the docs authentication guide. No published compliance
+  certifications (SOC 2 / ISO 27001) were found on a public trust page, so no
+  Compliance pointer is emitted.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: securitySchemes declares OAuth2AuthorizationCode (authorization code flow) via Keycloak.
+  - id: oidc
+    conforms: true
+    evidence: platform-auth.arthur.ai/realms/arthur exposes a full OpenID Connect discovery document.
+  - id: openapi-3.1
+    conforms: true
+    evidence: spec declares openapi 3.1.0.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: error responses use FastAPI detail envelopes, not application/problem+json.
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: no Sunset/Deprecation header policy documented.
+  - id: pagination
+    conforms: true
+    evidence: list operations expose page / page_size / sort / order query parameters.
+  - id: idempotency
+    conforms: false
+    evidence: no Idempotency-Key header or parameter present in the spec.
+  - id: fhir-r4
+    conforms: false
+  - id: scim
+    conforms: false

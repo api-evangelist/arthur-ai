@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.arthur.ai/changelog
+note: >-
+  Versioning and lifecycle posture for the Arthur Platform API. The REST API is
+  versioned in the URI path (/api/v1/...). Arthur publishes monthly, dated
+  release notes on the docs changelog. No public status page, SLA page, or formal
+  deprecation/Sunset-header policy was found on the public developer surface, so
+  no StatusPage or Deprecation pointer is emitted.
+versioning:
+  scheme: uri-path
+  current: v1
+  example: /api/v1/models/{model_id}
+changelog:
+  url: https://docs.arthur.ai/changelog
+  cadence: monthly
+deprecation:
+  policy_url: null
+  sunset_header: false
+sla:
+  url: null
+status_page: null
+deprecated_operations: []

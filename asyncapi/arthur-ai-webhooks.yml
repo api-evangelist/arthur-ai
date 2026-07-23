@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.arthur.ai/docs/webhooks-guide.md
+spec_type: Webhooks
+note: >-
+  Arthur documents an outbound webhook surface but publishes no AsyncAPI document.
+  Webhooks are workspace-level resources: you create a webhook pointing at a
+  destination URL and attach it to one or more alert rules. When an alert rule
+  fires, Arthur renders a Jinja2 body template with alert context and POSTs the
+  rendered JSON to the destination. The Arthur Platform API also exposes
+  Webhooks V1 CRUD operations (6 operations, tag "Webhooks V1").
+delivery:
+  transport: http-post
+  content_type: application/json
+  templating: jinja2
+  scope: workspace-level
+  trigger: alert-rule fired
+  destinations:
+    - Slack
+    - Jira
+    - PagerDuty
+    - any HTTP/HTTPS endpoint
+events:
+  - name: alert.fired
+    description: An alert rule evaluated true and fired; Arthur POSTs the rendered alert payload to each attached webhook.
+management_operations:
+  source: openapi/arthur-ai-platform-openapi.json
+  tag: Webhooks V1
+  count: 6

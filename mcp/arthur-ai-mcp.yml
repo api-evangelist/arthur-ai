@@ -1,0 +1,1077 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/arthur-ai-platform-openapi.json
+note: Candidate MCP tool surface derived one-to-one from Arthur Platform (Arthur Scope) OpenAPI operationIds. Not an official
+  published Arthur MCP server. Arthur ships an Agent Tool Kit and Claude Code integration (docs.arthur.ai/docs/integrate-claude-code),
+  but no standalone hosted MCP endpoint was found.
+server:
+  name: arthur-ai
+  transport: http
+tool_count: 213
+tools:
+- name: Health_check_api_health_get
+  description: Health Check
+  tag: General
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#Health_check_api_health_get
+- name: get_job
+  description: Get Job By Id
+  tag: Jobs V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_job
+- name: update_job
+  description: Update Job By Id
+  tag: Jobs V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#update_job
+- name: put_job_state
+  description: Update Job State
+  tag: Jobs V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_job_state
+- name: get_job_runs
+  description: Get Job Runs
+  tag: Jobs V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_job_runs
+- name: post_job_logs
+  description: Append To Job Logs
+  tag: Jobs V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_job_logs
+- name: get_job_logs
+  description: Get Job Logs
+  tag: Jobs V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_job_logs
+- name: post_job_errors
+  description: Append To Job Errors
+  tag: Jobs V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_job_errors
+- name: get_job_errors
+  description: Get Job Errors
+  tag: Jobs V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_job_errors
+- name: get_connector
+  description: Get Connector
+  tag: Connectors V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_connector
+- name: patch_connector
+  description: Update Connector
+  tag: Connectors V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_connector
+- name: delete_connector
+  description: Delete Connector
+  tag: Connectors V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_connector
+- name: get_sensitive_connector
+  description: Get Sensitive Connector
+  tag: Connectors V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_sensitive_connector
+- name: put_connector_check_results
+  description: Persist Connector Check Results
+  tag: Connectors V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_connector_check_results
+- name: get_connector_datasets
+  description: Get Datasets By Connector Id
+  tag: Datasets V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_connector_datasets
+- name: post_connector_dataset
+  description: Create Connector Dataset
+  tag: Datasets V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_connector_dataset
+- name: get_connector_available_datasets
+  description: Get Available Datasets By Connector Id
+  tag: Datasets V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_connector_available_datasets
+- name: put_connector_available_datasets
+  description: Overwrite Connector Available Datasets
+  tag: Datasets V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_connector_available_datasets
+- name: post_available_dataset
+  description: Create Single Available Dataset
+  tag: Datasets V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_available_dataset
+- name: get_connector_types
+  description: Get Available Connector Types
+  tag: Connector Schemas V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_connector_types
+- name: get_connector_schema_by_type
+  description: Get Connector Schema By Type
+  tag: Connector Schemas V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_connector_schema_by_type
+- name: get_dataset
+  description: Get Dataset By Id
+  tag: Datasets V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_dataset
+- name: patch_dataset
+  description: Update Dataset
+  tag: Datasets V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_dataset
+- name: delete_dataset
+  description: Delete Dataset
+  tag: Datasets V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_dataset
+- name: put_dataset_schema
+  description: Update Dataset Schema
+  tag: Datasets V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_dataset_schema
+- name: get_model_metrics_versions
+  description: Get Metric Versions
+  tag: Metrics V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_model_metrics_versions
+- name: post_model_metrics_version
+  description: Create A Metric Version
+  tag: Metrics V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_model_metrics_version
+- name: post_model_metrics_by_version
+  description: Upload Metrics For Version
+  tag: Metrics V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_model_metrics_by_version
+- name: patch_task
+  description: Update A Task
+  tag: Tasks V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_task
+- name: delete_task
+  description: Delete A Task
+  tag: Tasks V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_task
+- name: get_task_state_cache
+  description: Get Cached Task State
+  tag: Tasks V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_task_state_cache
+- name: sync_task
+  description: Sync A Task
+  tag: Tasks V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#sync_task
+- name: put_task_state_cache
+  description: Upload Task State
+  tag: Tasks V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_task_state_cache
+- name: put_task_connection_info
+  description: Upload Task State
+  tag: Tasks V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_task_connection_info
+- name: get_task_connection_info
+  description: Get Task Connection Info
+  tag: Tasks V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_task_connection_info
+- name: delete_connection_info
+  description: Delete Connection Info.
+  tag: Tasks V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_connection_info
+- name: post_regenerate_validation_key
+  description: Regenerate Task Validation Key
+  tag: Tasks V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_regenerate_validation_key
+- name: patch_model
+  description: Update Model
+  tag: Models V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_model
+- name: get_model
+  description: Get Model By Id
+  tag: Models V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_model
+- name: delete_model
+  description: Delete Model By Id
+  tag: Models V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_model
+- name: put_model_metric_config
+  description: Update Model Metric Configuration By Model Id
+  tag: Models V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_model_metric_config
+- name: get_model_alerts
+  description: Get Model Alerts
+  tag: Alerts V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_model_alerts
+- name: post_model_alerts
+  description: Create Model Alerts
+  tag: Alerts V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_model_alerts
+- name: get_model_alert_rules
+  description: Get Model Alert Rules
+  tag: Alert Rules V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_model_alert_rules
+- name: post_model_alert_rule
+  description: Create Model Alert Rule
+  tag: Alert Rules V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_model_alert_rule
+- name: post_alert_rule_query_validation
+  description: Validate A Model Alert Rule Query
+  tag: Alert Rules V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_alert_rule_query_validation
+- name: post_model_alert_logs
+  description: Create Model Alert Logs
+  tag: Alerts V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_model_alert_logs
+- name: get_model_alert_logs
+  description: Get Model Alert Logs
+  tag: Alerts V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_model_alert_logs
+- name: post_model_metrics_query
+  description: Query Model Metrics
+  tag: Metrics V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_model_metrics_query
+- name: put_model_metrics_schedule
+  description: Update Model Metrics Schedule
+  tag: Models V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_model_metrics_schedule
+- name: delete_model_metrics_schedule
+  description: Delete Model Metrics Schedule
+  tag: Models V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_model_metrics_schedule
+- name: list_model_policy_assignments
+  description: List Model Policy Assignments
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_model_policy_assignments
+- name: check_model_compliance
+  description: Check Model Compliance
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#check_model_compliance
+- name: list_model_attestations
+  description: List Model Attestations
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_model_attestations
+- name: get_openid_configuration
+  description: Get Openid Configuration Metadata
+  tag: OAuth V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_openid_configuration
+- name: get_metric_functions_aggregations
+  description: Get Aggregations Catalog
+  tag: Metric Functions V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_metric_functions_aggregations
+- name: get_workspace
+  description: Get Workspace.
+  tag: Workspaces V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_workspace
+- name: patch_workspace
+  description: Patch Workspace.
+  tag: Workspaces V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_workspace
+- name: delete_workspace
+  description: Delete Workspace.
+  tag: Workspaces V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_workspace
+- name: post_project
+  description: Post Project.
+  tag: Projects V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_project
+- name: get_projects
+  description: Get Projects.
+  tag: Projects V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_projects
+- name: post_data_plane
+  description: Post Data Plane.
+  tag: Data Planes V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_data_plane
+- name: get_data_planes
+  description: Get Data Planes.
+  tag: Data Planes V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_data_planes
+- name: post_data_plane_association
+  description: Post Data Plane Association.
+  tag: Data Plane Associations V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_data_plane_association
+- name: get_workspace_data_plane_associations
+  description: List Data Plane Associations For Workspace.
+  tag: Data Plane Associations V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_workspace_data_plane_associations
+- name: post_workspace_role_binding
+  description: Post Workspace Role Binding.
+  tag: Authorization V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_workspace_role_binding
+- name: list_workspace_role_bindings
+  description: List Workspace Role Bindings.
+  tag: Authorization V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_workspace_role_bindings
+- name: workspace_get_statistics
+  description: Get Workspace Statistics
+  tag: Workspaces V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#workspace_get_statistics
+- name: post_webhook
+  description: Post Webhook.
+  tag: Webhooks V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_webhook
+- name: get_workspace_webhooks
+  description: Get Webhooks.
+  tag: Webhooks V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_workspace_webhooks
+- name: post_test_webhook
+  description: Post Test Webhook.
+  tag: Webhooks V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_test_webhook
+- name: post_custom_aggregation
+  description: Post Custom Aggregation.
+  tag: Custom Aggregations V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_custom_aggregation
+- name: get_custom_aggregations_for_workspace
+  description: Get Custom Aggregation.
+  tag: Custom Aggregations V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_custom_aggregations_for_workspace
+- name: post_custom_aggregation_test
+  description: Post Custom Aggregation Test.
+  tag: Custom Aggregation Tests V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_custom_aggregation_test
+- name: get_custom_aggregation_tests_for_workspace
+  description: Get Custom Aggregation Tests.
+  tag: Custom Aggregation Tests V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_custom_aggregation_tests_for_workspace
+- name: validate_custom_aggregation
+  description: Validate A Custom Aggregation Before Creation.
+  tag: Custom Aggregations V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#validate_custom_aggregation
+- name: get_datasets_in_workspace
+  description: Get Workspace Datasets.
+  tag: Datasets V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_datasets_in_workspace
+- name: get_models_in_workspace
+  description: Get Workspace Models.
+  tag: Models V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_models_in_workspace
+- name: get_alerts_in_workspace
+  description: Get Workspace Alerts.
+  tag: Alerts V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_alerts_in_workspace
+- name: get_alert_rules_in_workspace
+  description: Get Workspace Alert Rules.
+  tag: Alert Rules V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_alert_rules_in_workspace
+- name: get_grouped_alerts_in_workspace
+  description: Get Workspace Alerts Grouped.
+  tag: Alerts V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_grouped_alerts_in_workspace
+- name: list_workspace_policy_assignments
+  description: List Workspace Policy Assignments
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_workspace_policy_assignments
+- name: list_workspace_compliance
+  description: List Workspace Compliance
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_workspace_compliance
+- name: check_workspace_policies_compliance
+  description: Check Workspace Policies Compliance
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#check_workspace_policies_compliance
+- name: get_users_organization
+  description: Get Users Organization.
+  tag: Organizations V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_users_organization
+- name: delete_organization
+  description: Delete Organization.
+  tag: Organizations V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_organization
+- name: patch_organization
+  description: Patch Organization.
+  tag: Organizations V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_organization
+- name: get_organization_users
+  description: Get Users In An Organization.
+  tag: Users V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_organization_users
+- name: post_organization_user
+  description: Create User
+  tag: Users V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_organization_user
+- name: list_roles
+  description: List Roles
+  tag: Authorization V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_roles
+- name: search_group_memberships
+  description: Search Group Memberships
+  tag: Groups V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#search_group_memberships
+- name: get_groups
+  description: List Groups
+  tag: Groups V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_groups
+- name: post_group
+  description: Create Group
+  tag: Groups V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_group
+- name: post_organization_user_invite
+  description: Create User Via Email Invite
+  tag: Users V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_organization_user_invite
+- name: post_organization_service_account
+  description: Create Service Account
+  tag: Users V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_organization_service_account
+- name: post_org_role_binding
+  description: Post Organization Role Binding.
+  tag: Authorization V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_org_role_binding
+- name: list_org_role_bindings
+  description: List Organization Role Bindings.
+  tag: Authorization V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_org_role_bindings
+- name: post_workspace
+  description: Post Workspace.
+  tag: Workspaces V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_workspace
+- name: get_workspaces
+  description: Get Workspaces.
+  tag: Workspaces V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_workspaces
+- name: get_organization_models
+  description: Get Organization Models.
+  tag: Models V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_organization_models
+- name: list_organization_policy_assignments
+  description: List Organization Policy Assignments
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_organization_policy_assignments
+- name: list_organization_compliance
+  description: List Organization Compliance
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_organization_compliance
+- name: list_unregistered_agents_for_organization
+  description: List Organization Unregistered Agents
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_unregistered_agents_for_organization
+- name: list_agent_llm_models_for_organization
+  description: List Organization Agent Llm Models
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_agent_llm_models_for_organization
+- name: list_agent_tools_for_organization
+  description: List Organization Agent Tools
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_agent_tools_for_organization
+- name: get_project
+  description: Get Project
+  tag: Projects V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_project
+- name: delete_project
+  description: Delete Project.
+  tag: Projects V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_project
+- name: patch_project
+  description: Patch Project.
+  tag: Projects V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_project
+- name: get_jobs
+  description: List Jobs
+  tag: Jobs V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_jobs
+- name: post_submit_jobs_batch
+  description: Submit Jobs Batch
+  tag: Jobs V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_submit_jobs_batch
+- name: get_connectors
+  description: List Connectors
+  tag: Connectors V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_connectors
+- name: post_connector
+  description: Create Connector
+  tag: Connectors V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_connector
+- name: get_datasets
+  description: Get Datasets
+  tag: Datasets V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_datasets
+- name: post_project_dataset
+  description: Create Project Dataset
+  tag: Datasets V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_project_dataset
+- name: post_project_available_dataset
+  description: Create Project Available Dataset
+  tag: Datasets V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_project_available_dataset
+- name: post_model
+  description: Create Model
+  tag: Models V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_model
+- name: get_models
+  description: List Models
+  tag: Models V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_models
+- name: get_project_data_plane_associations
+  description: List Data Plane Associations For Project.
+  tag: Data Plane Associations V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_project_data_plane_associations
+- name: post_project_role_binding
+  description: Post Project Role Binding
+  tag: Authorization V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_project_role_binding
+- name: list_project_role_bindings
+  description: List Project Role Bindings.
+  tag: Authorization V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_project_role_bindings
+- name: generate_metrics_spec
+  description: Generates A Metrics Spec.
+  tag: Models V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#generate_metrics_spec
+- name: project_create_model_task
+  description: Create A Task.
+  tag: Tasks V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#project_create_model_task
+- name: project_create_model_link_task
+  description: Link An Existing Task To A New Model.
+  tag: Tasks V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#project_create_model_link_task
+- name: get_available_dataset
+  description: Get Available Dataset By Id
+  tag: Datasets V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_available_dataset
+- name: put_available_dataset_schema
+  description: Update Available Dataset Schema
+  tag: Datasets V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_available_dataset_schema
+- name: delete_data_plane
+  description: Delete Data Plane By Id
+  tag: Data Planes V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_data_plane
+- name: patch_data_plane
+  description: Update Data Plane
+  tag: Data Planes V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_data_plane
+- name: get_data_plane
+  description: Get Data Plane By Id
+  tag: Data Planes V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_data_plane
+- name: get_infrastructures
+  description: Get Supported Infrastructure Values
+  tag: Data Planes V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_infrastructures
+- name: post_data_plane_cred_set
+  description: Regenerate Data Plane Credential Set.
+  tag: Data Planes V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_data_plane_cred_set
+- name: post_dequeue_job
+  description: Dequeue Job
+  tag: Jobs V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_dequeue_job
+- name: get_data_plane_project_associations
+  description: List Projects Associated With The Data Plane
+  tag: Data Plane Associations V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_data_plane_project_associations
+- name: get_users_me
+  description: Get User Metadata
+  tag: Users V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_users_me
+- name: accept_my_invites
+  description: Accept User Invitations
+  tag: Users V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#accept_my_invites
+- name: list_user_role_bindings
+  description: Get User Role Bindings.
+  tag: Authorization V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_user_role_bindings
+- name: delete_user
+  description: Delete User
+  tag: Users V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_user
+- name: patch_user
+  description: Patch User.
+  tag: Users V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_user
+- name: post_user_creds
+  description: Regenerate User Credentials.
+  tag: Users V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_user_creds
+- name: patch_service_account_user
+  description: Patch Service Account User.
+  tag: Users V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_service_account_user
+- name: get_group
+  description: Get Group
+  tag: Groups V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_group
+- name: patch_group
+  description: Update Group
+  tag: Groups V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_group
+- name: delete_group
+  description: Delete Group
+  tag: Groups V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_group
+- name: get_group_users
+  description: Get Group Users
+  tag: Groups V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_group_users
+- name: assign_users_to_group
+  description: Assign User To Group
+  tag: Groups V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#assign_users_to_group
+- name: remove_users_from_group
+  description: Remove Users From Group In Bulk
+  tag: Groups V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#remove_users_from_group
+- name: list_group_role_bindings
+  description: Get Group Role Bindings.
+  tag: Authorization V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_group_role_bindings
+- name: delete_data_plane_association
+  description: Delete Data Plane Association By Id
+  tag: Data Plane Associations V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_data_plane_association
+- name: delete_role_binding
+  description: Delete Role Binding.
+  tag: Authorization V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_role_binding
+- name: list_permissions_library
+  description: List Permissions
+  tag: Authorization V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_permissions_library
+- name: check_permissions
+  description: Check Permissions
+  tag: Authorization V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#check_permissions
+- name: get_role
+  description: Get Role.
+  tag: Roles V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_role
+- name: get_alert
+  description: Get Alert By Id
+  tag: Alerts V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_alert
+- name: post_alert_rule_query_validation_static
+  description: Validate An Alert Rule Query (Static)
+  tag: Alert Rules V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_alert_rule_query_validation_static
+- name: get_alert_rule
+  description: Get Alert Rule By Id
+  tag: Alert Rules V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_alert_rule
+- name: patch_alert_rule
+  description: Update Model Alert Rule
+  tag: Alert Rules V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_alert_rule
+- name: delete_alert_rule
+  description: Delete Alert Rule By Id
+  tag: Alert Rules V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_alert_rule
+- name: get_webhook
+  description: Get Webhook.
+  tag: Webhooks V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_webhook
+- name: patch_webhook
+  description: Patch Webhook.
+  tag: Webhooks V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_webhook
+- name: delete_webhook
+  description: Delete Webhook.
+  tag: Webhooks V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_webhook
+- name: post_data_retrieval_operation
+  description: Create Raw Data Operation
+  tag: Data Retrieval V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_data_retrieval_operation
+- name: get_data_retrieval_data
+  description: Gets Raw Data Operation Data
+  tag: Data Retrieval V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_data_retrieval_data
+- name: put_data_retrieval_data
+  description: Put Retrieved Data
+  tag: Data Retrieval V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_data_retrieval_data
+- name: delete_data_retrieval_data
+  description: Delete Retrieved Data
+  tag: Data Retrieval V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_data_retrieval_data
+- name: post_available_data_retrieval_operation
+  description: Create Raw Data Operation
+  tag: Data Retrieval V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_available_data_retrieval_operation
+- name: get_available_data_retrieval_data
+  description: Gets Raw Data Operation Data
+  tag: Data Retrieval V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_available_data_retrieval_data
+- name: put_available_data_retrieval_data
+  description: Put Retrieved Data
+  tag: Data Retrieval V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_available_data_retrieval_data
+- name: delete_available_data_retrieval_data
+  description: Delete Retrieved Data
+  tag: Data Retrieval V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_available_data_retrieval_data
+- name: post_tenant
+  description: Retrieve Jwt For Upsolve Ai Dashboards
+  tag: Upsolve V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_tenant
+- name: post_sign_up_user
+  description: Sign Up New User.
+  tag: Registration V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_sign_up_user
+- name: get_feature_flags
+  description: Get Feature Flags.
+  tag: Feature Flags V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_feature_flags
+- name: put_custom_aggregation
+  description: Update Custom Aggregation By Id.
+  tag: Custom Aggregations V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_custom_aggregation
+- name: delete_custom_aggregation
+  description: Delete Custom Aggregation.
+  tag: Custom Aggregations V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_custom_aggregation
+- name: get_custom_aggregation
+  description: Get Custom Aggregation By Id.
+  tag: Custom Aggregations V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_custom_aggregation
+- name: patch_custom_aggregation
+  description: Patch Custom Aggregation
+  tag: Custom Aggregations V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#patch_custom_aggregation
+- name: delete_custom_aggregation_test
+  description: Delete Custom Aggregation Test.
+  tag: Custom Aggregation Tests V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_custom_aggregation_test
+- name: get_custom_aggregation_test
+  description: Get Custom Aggregation Test By Id.
+  tag: Custom Aggregation Tests V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_custom_aggregation_test
+- name: post_custom_aggregation_test_results
+  description: Post Custom Aggregation Test Results.
+  tag: Custom Aggregation Tests V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#post_custom_aggregation_test_results
+- name: get_custom_aggregation_test_results
+  description: Get Custom Aggregation Test Results By Id.
+  tag: Custom Aggregation Tests V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_custom_aggregation_test_results
+- name: get_registered_agent_by_id
+  description: Get A Registered Agent By Its Id.
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_registered_agent_by_id
+- name: update_unregistered_agent
+  description: Update An Unregistered Agent.
+  tag: Agents V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#update_unregistered_agent
+- name: list_agents_for_workspace
+  description: List All Agents For A Workspace.
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_agents_for_workspace
+- name: list_unregistered_agents_for_workspace
+  description: List All Unregistered Agents For A Workspace.
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_unregistered_agents_for_workspace
+- name: list_tools_for_workspace
+  description: List All Registered Agent Tools For A Workspace.
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_tools_for_workspace
+- name: list_sub_agents_for_workspace
+  description: List All Registered Agent Sub-Agents For A Workspace.
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_sub_agents_for_workspace
+- name: list_llm_models_for_workspace
+  description: List All Registered Agent Llm Models For A Workspace.
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_llm_models_for_workspace
+- name: list_data_sources_for_workspace
+  description: List All Registered Agent Data Sources For A Workspace.
+  tag: Agents V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_data_sources_for_workspace
+- name: put_agents
+  description: Upsert Agents.
+  tag: Agents V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#put_agents
+- name: create_policy
+  description: Create Policy
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#create_policy
+- name: list_policies
+  description: List Policies
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_policies
+- name: get_policy
+  description: Get Policy
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_policy
+- name: update_policy
+  description: Update Policy
+  tag: Policies V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#update_policy
+- name: delete_policy
+  description: Delete Policy
+  tag: Policies V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_policy
+- name: create_policy_alert_rule
+  description: Create Policy Alert Rule
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#create_policy_alert_rule
+- name: list_policy_alert_rules
+  description: List Policy Alert Rules
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_policy_alert_rules
+- name: create_policy_attestation_rule
+  description: Create Policy Attestation Rule
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#create_policy_attestation_rule
+- name: list_policy_attestation_rules
+  description: List Policy Attestation Rules
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_policy_attestation_rules
+- name: create_policy_assignments
+  description: Create Policy Assignments
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#create_policy_assignments
+- name: list_policy_assignments
+  description: List Policy Assignments
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_policy_assignments
+- name: check_policy_compliance
+  description: Check Policy Compliance
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#check_policy_compliance
+- name: list_policy_compliance_history
+  description: List Policy Compliance History
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_policy_compliance_history
+- name: get_policy_alert_rule
+  description: Get Policy Alert Rule
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_policy_alert_rule
+- name: update_policy_alert_rule
+  description: Update Policy Alert Rule
+  tag: Policies V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#update_policy_alert_rule
+- name: delete_policy_alert_rule
+  description: Delete Policy Alert Rule
+  tag: Policies V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_policy_alert_rule
+- name: get_policy_attestation_rule
+  description: Get Policy Attestation Rule
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_policy_attestation_rule
+- name: update_policy_attestation_rule
+  description: Update Policy Attestation Rule
+  tag: Policies V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#update_policy_attestation_rule
+- name: delete_policy_attestation_rule
+  description: Delete Policy Attestation Rule
+  tag: Policies V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_policy_attestation_rule
+- name: get_policy_assignment
+  description: Get Policy Assignment
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#get_policy_assignment
+- name: delete_policy_assignment
+  description: Delete Policy Assignment
+  tag: Policies V1
+  method: DELETE
+  source_operation: openapi/arthur-ai-platform-openapi.json#delete_policy_assignment
+- name: check_assignment_compliance
+  description: Check Assignment Compliance
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#check_assignment_compliance
+- name: create_attestation
+  description: Create Attestation
+  tag: Policies V1
+  method: POST
+  source_operation: openapi/arthur-ai-platform-openapi.json#create_attestation
+- name: list_assignment_attestations
+  description: List Assignment Attestations
+  tag: Policies V1
+  method: GET
+  source_operation: openapi/arthur-ai-platform-openapi.json#list_assignment_attestations
+- name: set_compliance_status
+  description: Set Compliance Status
+  tag: Policies V1
+  method: PUT
+  source_operation: openapi/arthur-ai-platform-openapi.json#set_compliance_status
+- name: update_assignment_job_chain
+  description: Update Assignment Job Chain
+  tag: Policies V1
+  method: PATCH
+  source_operation: openapi/arthur-ai-platform-openapi.json#update_assignment_job_chain

@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/arthur-ai-platform-openapi.json
+format: http-status
+envelope:
+  note: 'Arthur Scope is a FastAPI service. 422 responses carry a HTTPValidationError body: {"detail":[{"loc":[...],"msg":"...","type":"..."}]}.
+    Other 4xx/5xx return {"detail":"<message>"}.'
+  problem_json: false
+problems:
+- status: 400
+  title: Bad Request
+  description: The request was malformed or contained invalid parameters.
+  occurrences: 58
+  example_operation: openapi/arthur-ai-platform-openapi.json#patch_connector
+- status: 404
+  title: Not Found
+  description: The requested resource does not exist or is not visible to the caller.
+  occurrences: 165
+  example_operation: openapi/arthur-ai-platform-openapi.json#get_job
+- status: 409
+  title: Conflict
+  description: The request conflicts with the current state of the resource (e.g. duplicate).
+  occurrences: 3
+  example_operation: openapi/arthur-ai-platform-openapi.json#post_organization_user
+- status: 422
+  title: Unprocessable Entity
+  description: Request body or query params failed validation; see the `detail[]` array (FastAPI/Pydantic
+    HTTPValidationError).
+  occurrences: 203
+  example_operation: openapi/arthur-ai-platform-openapi.json#get_job
+- status: 500
+  title: Internal Server Error
+  description: An unexpected error occurred on the Arthur Platform.
+  occurrences: 213
+  example_operation: openapi/arthur-ai-platform-openapi.json#Health_check_api_health_get

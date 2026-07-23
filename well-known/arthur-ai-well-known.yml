@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+note: >-
+  Well-known discovery probe of the Arthur hosts. The only real document found is
+  the OIDC discovery for the Keycloak realm that fronts the Arthur Platform API
+  (issuer https://platform-auth.arthur.ai/realms/arthur). The platform SPA host
+  (platform.arthur.ai) returns HTTP 200 with an HTML app shell for every
+  /.well-known/* path (soft-404), so those are recorded as not-present.
+documents:
+  - host: https://platform-auth.arthur.ai/realms/arthur
+    path: /.well-known/openid-configuration
+    status: 200
+    file: arthur-ai-openid-configuration.json
+    kind: openid-configuration
+  - host: https://platform.arthur.ai
+    path: /.well-known/security.txt
+    status: 404
+    note: SPA returns HTML app shell, not a security.txt
+  - host: https://platform.arthur.ai
+    path: /.well-known/oauth-authorization-server
+    status: 404
+    note: SPA app-shell soft-404
+  - host: https://www.arthur.ai
+    path: /.well-known/security.txt
+    status: 404
+  - host: https://docs.arthur.ai
+    path: /.well-known/security.txt
+    status: 404

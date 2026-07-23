@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.arthur.ai/changelog
+note: >-
+  Arthur publishes monthly, dated release notes for the Arthur Platform on its
+  docs changelog. Titles/dates captured from the changelog index; individual
+  entry bodies were not expanded (recent window only).
+scheme: monthly-release-notes
+current: 'June 2026 Release Notes'
+entries:
+  - title: June 2026 Release Notes
+    date: '2026-06'
+  - title: May 2026 Release Notes
+    date: '2026-05'
+  - title: April 2026 Release Notes
+    date: '2026-04'
+  - title: February 2026 Release Notes
+    date: '2026-02'
+  - title: January 2026 Release Notes
+    date: '2026-01'
+  - title: December 2025 Release Notes
+    date: '2025-12'
+  - title: November 2025 Release Notes
+    date: '2025-11'
+  - title: October 2025 Release Notes
+    date: '2025-10'
+  - title: September 2025 Release Notes
+    date: '2025-09'
+  - title: August 2025 Release Notes
+    date: '2025-08'

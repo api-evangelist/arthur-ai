@@ -1,0 +1,129 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/arthur-ai-platform-openapi.json
+note: "Entity graph derived from Arthur Platform OpenAPI tag groups and id-reference parameters (model_id,\
+  \ workspace_id, project_id, dataset_id, connector_id, rule_id, policy_id, \u2026). Arthur Scope has\
+  \ 386 component schemas across 29 resource groups; this captures the primary entities and their id-based\
+  \ relationships."
+entities:
+- name: Workspace
+  primary_id: workspace_id
+  references:
+  - Project
+  - Webhook
+  - DataPlane
+- name: Project
+  primary_id: project_id
+  references:
+  - Model
+  - Workspace
+- name: Model
+  primary_id: model_id
+  references:
+  - Task
+  - Metric
+  - AlertRule
+- name: Task
+  primary_id: model_id
+  references:
+  - Model
+- name: Dataset
+  primary_id: dataset_id
+  references:
+  - Connector
+- name: Connector
+  primary_id: connector_id
+  references:
+  - Dataset
+- name: Job
+  primary_id: job_id
+  references:
+  - Connector
+- name: AlertRule
+  primary_id: rule_id
+  references:
+  - Model
+  - Alert
+  - Webhook
+- name: Alert
+  primary_id: alert_id
+  references:
+  - AlertRule
+- name: Policy
+  primary_id: policy_id
+  references:
+  - Model
+  - Workspace
+- name: Webhook
+  primary_id: webhook_id
+  references:
+  - Workspace
+  - AlertRule
+- name: Agent
+  primary_id: agent_id
+  references:
+  - Workspace
+- name: DataPlane
+  primary_id: data_plane_id
+  references:
+  - Workspace
+- name: User
+  primary_id: user_id
+  references:
+  - Organization
+  - Group
+- name: Group
+  primary_id: group_id
+  references:
+  - User
+  - Role
+- name: Organization
+  primary_id: organization_id
+  references:
+  - Workspace
+  - User
+relationships:
+- from: Task
+  to: Model
+  type: belongs_to
+  via: model_id
+- from: Dataset
+  to: Connector
+  type: belongs_to
+  via: connector_id
+- from: Alert
+  to: AlertRule
+  type: belongs_to
+  via: rule_id
+- from: Webhook
+  to: Workspace
+  type: belongs_to
+  via: workspace_id
+- from: Project
+  to: Workspace
+  type: belongs_to
+  via: workspace_id
+- from: Model
+  to: Project
+  type: belongs_to
+  via: project_id
+- from: AlertRule
+  to: Model
+  type: belongs_to
+  via: model_id
+- from: Policy
+  to: Workspace
+  type: belongs_to
+  via: workspace_id
+- from: Agent
+  to: Workspace
+  type: belongs_to
+  via: workspace_id
+- from: DataPlane
+  to: Workspace
+  type: belongs_to
+  via: workspace_id
+- from: Job
+  to: Connector
+  type: belongs_to
+  via: connector_id

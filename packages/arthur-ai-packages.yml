@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: searched
+source: https://pypi.org/user/arthur-ai/
+note: >-
+  First-party Arthur client libraries and tools published to PyPI under the
+  arthur-ai account. All MIT-licensed. The Arthur Platform API is also
+  consumable via the auto-generated arthur-client bindings; arthurai is the
+  legacy ML-monitoring SDK; arthur-bench is the open-source LLM evaluation
+  library (github.com/arthur-ai/bench).
+packages:
+  - language: python
+    registry: pypi
+    name: arthur-client
+    url: https://pypi.org/project/arthur-client/
+    install: pip install arthur-client
+    version: 1.4.2268
+    official: true
+    description: Arthur Python API Client Library (bindings for the Arthur Platform API).
+  - language: python
+    registry: pypi
+    name: arthurai
+    url: https://pypi.org/project/arthurai/
+    install: pip install arthurai
+    version: 3.33.3
+    official: true
+    description: Arthur Python SDK for centralized monitoring of production ML models.
+  - language: python
+    registry: pypi
+    name: arthur-bench
+    url: https://pypi.org/project/arthur-bench/
+    install: pip install arthur-bench
+    version: 0.3.1
+    official: true
+    repository: https://github.com/arthur-ai/bench
+    description: Open-source tool for evaluating and validating LLMs for production.
+  - language: python
+    registry: pypi
+    name: arthur-common
+    url: https://pypi.org/project/arthur-common/
+    install: pip install arthur-common
+    version: 2.4.67
+    official: true
+    description: Utility code common to Arthur platform components.

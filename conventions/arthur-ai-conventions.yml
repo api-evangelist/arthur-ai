@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.arthur.ai/docs/authentication.md
+note: >-
+  Cross-cutting request/response semantics for the Arthur Platform API, from the
+  docs (authentication guide) and derived from the OpenAPI. Arthur documents no
+  idempotency-key contract, so no Idempotency pointer is emitted.
+authentication:
+  style: oauth2
+  detail: >-
+    Arthur Platform API uses OAuth2 via Keycloak (issuer
+    https://platform-auth.arthur.ai/realms/arthur). Human flows use device
+    authorization; machine-to-machine uses service-account client credentials.
+    The self-hosted Arthur Engine / Agent Toolkit uses API keys instead.
+  ref: authentication/arthur-ai-authentication.yml
+pagination:
+  style: page-number
+  params:
+    - page
+    - page_size
+    - sort
+    - order
+  note: List endpoints accept page/page_size with sort + order controls.
+idempotency:
+  supported: false
+  note: No Idempotency-Key header or parameter is present in the OpenAPI or documented.
+versioning:
+  style: uri-path
+  current: v1
+  ref: lifecycle/arthur-ai-lifecycle.yml
+error_envelope:
+  style: fastapi-detail
+  shape: >-
+    2xx failures return {"detail": "<message>"}; 422 validation errors return
+    {"detail": [{"loc": [...], "msg": "...", "type": "..."}]} (Pydantic
+    HTTPValidationError).
+  ref: errors/arthur-ai-problem-types.yml
+webhooks:
+  supported: true
+  direction: outbound
+  note: Workspace-level webhooks POST alert payloads (Jinja2-templated JSON) to a destination URL when an alert rule fires.
+  ref: asyncapi/arthur-ai-webhooks.yml
+rate_limiting:
+  documented: false

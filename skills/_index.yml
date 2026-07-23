@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/arthur-ai-platform-openapi.json
+skills:
+  - file: arthur-ai-onboard-model-monitoring.md
+    name: Onboard a model into Arthur monitoring
+    api: openapi/arthur-ai-platform-openapi.json
+    operations: [post_workspace, post_project, post_model, post_connector, post_connector_dataset, post_model_alert_rule]
+  - file: arthur-ai-alerting-webhooks.md
+    name: Configure alerting and webhook notifications
+    api: openapi/arthur-ai-platform-openapi.json
+    operations: [post_model_alert_rule, post_alert_rule_query_validation, post_webhook, post_test_webhook, get_model_alerts]
+  - file: arthur-ai-agent-discovery.md
+    name: Discover and register AI agents for governance
+    api: openapi/arthur-ai-platform-openapi.json
+    operations: [list_unregistered_agents_for_organization, list_unregistered_agents_for_workspace, put_agents, get_registered_agent_by_id, list_tools_for_workspace]
