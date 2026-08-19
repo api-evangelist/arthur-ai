@@ -2,9 +2,9 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: openapi/arthur-ai-platform-openapi.json
-note: Candidate MCP tool surface derived one-to-one from Arthur Platform (Arthur Scope) OpenAPI operationIds. Not an official
-  published Arthur MCP server. Arthur ships an Agent Tool Kit and Claude Code integration (docs.arthur.ai/docs/integrate-claude-code),
-  but no standalone hosted MCP endpoint was found.
+note: Candidate MCP tool surface derived one-to-one from Arthur Platform (Arthur Scope) OpenAPI operationIds.
+  Not an official published Arthur MCP server. Arthur ships an Agent Tool Kit and Claude Code integration
+  (docs.arthur.ai/docs/integrate-claude-code), but no standalone hosted MCP endpoint was found.
 server:
   name: arthur-ai
   transport: http
@@ -1075,3 +1075,9 @@ tools:
   tag: Policies V1
   method: PATCH
   source_operation: openapi/arthur-ai-platform-openapi.json#update_assignment_job_chain
+deployment:
+  mode: none
+  verified: derived
+  tools: 213
+  checked: '2026-08-12'
+  source: catalog MCP census

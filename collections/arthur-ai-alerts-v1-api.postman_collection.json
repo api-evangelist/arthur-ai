@@ -1,0 +1,2984 @@
+{
+  "item": [
+    {
+      "id": "fdeecb32-8601-4046-8257-f691b4dd3bff",
+      "name": "Alerts V1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f6be5ada-e210-4f36-8184-d3e7e5755d28",
+          "name": "Get Model Alerts",
+          "request": {
+            "name": "Get Model Alerts",
+            "description": {
+              "content": "Returns a list of alerts associated with a model. Requires model_list_alerts permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "models",
+                ":model_id",
+                "alerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "timestamp",
+                  "description": "The field to sort by."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc",
+                  "description": "The order to sort by."
+                },
+                {
+                  "disabled": false,
+                  "key": "alert_rule_ids",
+                  "value": "<uuid>",
+                  "description": "The ID of the alert rule to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "alert_rule_ids",
+                  "value": "<uuid>",
+                  "description": "The ID of the alert rule to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "bound",
+                  "value": "<string>",
+                  "description": "The bound to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "time_from",
+                  "value": "<dateTime>",
+                  "description": "The start timestamp to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "time_to",
+                  "value": "<dateTime>",
+                  "description": "The end timestamp to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "created_at_from",
+                  "value": "<dateTime>",
+                  "description": "Filter alerts created at or after this timestamp."
+                },
+                {
+                  "disabled": false,
+                  "key": "created_at_to",
+                  "value": "<dateTime>",
+                  "description": "Filter alerts created at or before this timestamp."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "The page to return starting from 1 up to total_pages."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20",
+                  "description": "The number of records per page. The max is 1000."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "model_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3cc18c68-ec83-4470-856d-4f47872d035e",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created_at_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created_at_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"1998-05-18T15:46:41.241Z\",\n      \"value\": 1986.9064061358365,\n      \"threshold\": 7083.4011518788275,\n      \"bound\": \"lower_bound\",\n      \"interval\": {\n        \"unit\": \"seconds\",\n        \"count\": 7376\n      },\n      \"dimensions\": {\n        \"key_0\": 190,\n        \"key_1\": \"string\"\n      },\n      \"alert_rule_id\": \"dc79cc0d-365f-93fb-fbb6-7c173e69c79d\",\n      \"created_at\": \"2021-06-16T17:21:03.113Z\",\n      \"updated_at\": \"1985-06-12T17:44:14.956Z\",\n      \"id\": \"ca173d4a-1859-e347-8243-368d29585f46\",\n      \"model_id\": \"4ae4b135-00a1-ffb8-be4e-223b2f5565f7\",\n      \"alert_rule_name\": \"string\",\n      \"alert_rule_metric_name\": \"string\",\n      \"job_id\": \"0b383a83-9be7-ca60-5f3a-3a78ff06a732\",\n      \"is_duplicate_of\": \"131b7e57-bc9d-0d44-b045-4b0d5da0bc86\"\n    },\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"2025-02-09T12:39:49.523Z\",\n      \"value\": 4823.302525432859,\n      \"threshold\": 8076.456410249031,\n      \"bound\": \"upper_bound\",\n      \"interval\": {\n        \"unit\": \"seconds\",\n        \"count\": 7331\n      },\n      \"dimensions\": {\n        \"key_0\": \"string\"\n      },\n      \"alert_rule_id\": \"e09daa97-cb8b-c65c-9509-c79341acf72f\",\n      \"created_at\": \"1976-03-25T02:13:18.162Z\",\n      \"updated_at\": \"1977-02-01T06:41:48.480Z\",\n      \"id\": \"85cb286b-ca5f-91e7-f93c-c1531c108557\",\n      \"model_id\": \"0e96c361-6225-22ef-bf1c-64cecceeef29\",\n      \"alert_rule_name\": \"string\",\n      \"alert_rule_metric_name\": \"string\",\n      \"job_id\": \"677b5bd5-e31e-3975-37cc-b58455cd6c44\",\n      \"is_duplicate_of\": \"f7059c62-73c2-9e61-6502-3936e48b2569\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ddb4e8b-c790-41d6-894c-2e5e92aa01c6",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created_at_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created_at_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ad1b224-ac15-459d-b414-1f2c18888d8f",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created_at_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created_at_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d8cf598-e3bd-4f6b-9042-f0b1b4edb7dc",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created_at_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "created_at_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "668a6ae8-d24b-4fdd-b0b4-a616b0903148",
+          "name": "Create Model Alerts",
+          "request": {
+            "name": "Create Model Alerts",
+            "description": {
+              "content": "Creates a list of alerts associated with a model. Requires model_create_alert permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "models",
+                ":model_id",
+                "alerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "model_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"alerts\": [\n    {\n      \"description\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"value\": \"<number>\",\n      \"threshold\": \"<number>\",\n      \"bound\": \"<string>\",\n      \"interval\": {\n        \"unit\": \"<string>\",\n        \"count\": \"<integer>\"\n      },\n      \"dimensions\": {\n        \"key_0\": false,\n        \"key_1\": \"string\"\n      },\n      \"alert_rule_id\": \"<uuid>\",\n      \"job_id\": \"<uuid>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5ceef3d2-12c6-4e0e-8d84-bfe12472c562",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"alerts\": [\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"1993-11-30T12:17:01.853Z\",\n      \"value\": 1713.0006905777007,\n      \"threshold\": 6794.622780401405,\n      \"bound\": \"lower_bound\",\n      \"interval\": {\n        \"unit\": \"minutes\",\n        \"count\": 2484\n      },\n      \"dimensions\": {\n        \"key_0\": true\n      },\n      \"alert_rule_id\": \"f84f197d-cf92-180d-5763-d659b1ced752\",\n      \"job_id\": \"3be0f28a-c8f5-d4e4-5520-76cef4bbe7a1\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"alerts\": [\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"1960-03-25T16:05:17.949Z\",\n      \"value\": 9977.762564232718,\n      \"threshold\": 7612.379665178553,\n      \"bound\": \"upper_bound\",\n      \"interval\": {\n        \"unit\": \"seconds\",\n        \"count\": 5631\n      },\n      \"dimensions\": {\n        \"key_0\": 5609,\n        \"key_1\": \"string\",\n        \"key_2\": 7011,\n        \"key_3\": 5454.00386948091\n      },\n      \"alert_rule_id\": \"e7ba8414-99c6-f7a7-1f50-e7c72a959fce\",\n      \"created_at\": \"2001-06-07T12:55:09.221Z\",\n      \"updated_at\": \"1965-12-29T18:54:20.160Z\",\n      \"id\": \"953966f1-030c-0831-70eb-912b0a62a748\",\n      \"model_id\": \"23979b41-9ff6-c2f3-ca8f-8481d0d1a529\",\n      \"alert_rule_name\": \"string\",\n      \"alert_rule_metric_name\": \"string\",\n      \"job_id\": \"ce7ec4c6-aa6f-116b-ffbf-4aa2ba351575\",\n      \"is_duplicate_of\": \"2e0960c2-b705-ef3f-2d68-0843e0d236ad\"\n    },\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"2011-09-10T08:47:00.303Z\",\n      \"value\": 864.4821223612075,\n      \"threshold\": 8946.109658559399,\n      \"bound\": \"lower_bound\",\n      \"interval\": {\n        \"unit\": \"hours\",\n        \"count\": 9195\n      },\n      \"dimensions\": {\n        \"key_0\": true\n      },\n      \"alert_rule_id\": \"4748e357-4079-92a1-d0e0-078bb67f5612\",\n      \"created_at\": \"1964-02-05T18:36:36.728Z\",\n      \"updated_at\": \"1961-11-20T21:36:47.678Z\",\n      \"id\": \"ef325299-a318-1ce1-b357-93d0aed9d3d1\",\n      \"model_id\": \"7a3821cf-1ae3-d2b0-5396-b613428f7df2\",\n      \"alert_rule_name\": \"string\",\n      \"alert_rule_metric_name\": \"string\",\n      \"job_id\": \"44604af0-2b24-65c1-8add-f85c598fad9f\",\n      \"is_duplicate_of\": \"00d0ca69-9bc4-8f54-3cf8-18f5d140af36\"\n    }\n  ],\n  \"webhooks_called\": [\n    {\n      \"webhook_id\": \"0364ce9b-b060-e64e-db9e-3d6f8fcb1bc3\",\n      \"webhook_name\": \"string\",\n      \"webhook_result\": {\n        \"error\": \"string\",\n        \"response\": {\n          \"status_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"response\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    },\n    {\n      \"webhook_id\": \"12128d90-c7ba-7dd8-4da0-3ace03350278\",\n      \"webhook_name\": \"string\",\n      \"webhook_result\": {\n        \"error\": \"string\",\n        \"response\": {\n          \"status_code\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"response\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c3e37a0b-a349-40ed-a302-7a595f0991cc",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"alerts\": [\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"1993-11-30T12:17:01.853Z\",\n      \"value\": 1713.0006905777007,\n      \"threshold\": 6794.622780401405,\n      \"bound\": \"lower_bound\",\n      \"interval\": {\n        \"unit\": \"minutes\",\n        \"count\": 2484\n      },\n      \"dimensions\": {\n        \"key_0\": true\n      },\n      \"alert_rule_id\": \"f84f197d-cf92-180d-5763-d659b1ced752\",\n      \"job_id\": \"3be0f28a-c8f5-d4e4-5520-76cef4bbe7a1\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Bad Request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "299f1cb9-18c6-4ce7-ba7e-512626c73141",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"alerts\": [\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"1993-11-30T12:17:01.853Z\",\n      \"value\": 1713.0006905777007,\n      \"threshold\": 6794.622780401405,\n      \"bound\": \"lower_bound\",\n      \"interval\": {\n        \"unit\": \"minutes\",\n        \"count\": 2484\n      },\n      \"dimensions\": {\n        \"key_0\": true\n      },\n      \"alert_rule_id\": \"f84f197d-cf92-180d-5763-d659b1ced752\",\n      \"job_id\": \"3be0f28a-c8f5-d4e4-5520-76cef4bbe7a1\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ea1bc1bf-85a6-49da-ad99-84535f927ea0",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"alerts\": [\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"1993-11-30T12:17:01.853Z\",\n      \"value\": 1713.0006905777007,\n      \"threshold\": 6794.622780401405,\n      \"bound\": \"lower_bound\",\n      \"interval\": {\n        \"unit\": \"minutes\",\n        \"count\": 2484\n      },\n      \"dimensions\": {\n        \"key_0\": true\n      },\n      \"alert_rule_id\": \"f84f197d-cf92-180d-5763-d659b1ced752\",\n      \"job_id\": \"3be0f28a-c8f5-d4e4-5520-76cef4bbe7a1\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4cb5acc8-dd54-48b7-89df-fab3e350d588",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"alerts\": [\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"1993-11-30T12:17:01.853Z\",\n      \"value\": 1713.0006905777007,\n      \"threshold\": 6794.622780401405,\n      \"bound\": \"lower_bound\",\n      \"interval\": {\n        \"unit\": \"minutes\",\n        \"count\": 2484\n      },\n      \"dimensions\": {\n        \"key_0\": true\n      },\n      \"alert_rule_id\": \"f84f197d-cf92-180d-5763-d659b1ced752\",\n      \"job_id\": \"3be0f28a-c8f5-d4e4-5520-76cef4bbe7a1\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a403012-72c5-4b2f-8061-b5f331f75c77",
+          "name": "Create Model Alert Logs",
+          "request": {
+            "name": "Create Model Alert Logs",
+            "description": {
+              "content": "Creates alert rule evaluation logs for a model. Requires model_create_alert permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "models",
+                ":model_id",
+                "alert_logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "model_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"logs\": [\n    {\n      \"alert_rule_id\": \"<uuid>\",\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"job_id\": \"<uuid>\",\n      \"policy_model_assignment_id\": \"<uuid>\"\n    },\n    {\n      \"alert_rule_id\": \"<uuid>\",\n      \"status\": \"<string>\",\n      \"timestamp\": \"<dateTime>\",\n      \"job_id\": \"<uuid>\",\n      \"policy_model_assignment_id\": \"<uuid>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c9d41caf-e75a-4a58-8fda-1a0df4eefa4c",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alert_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logs\": [\n    {\n      \"alert_rule_id\": \"632e98c3-17aa-df69-8a94-9b3fde45032a\",\n      \"status\": \"no_data\",\n      \"timestamp\": \"1976-04-26T23:28:31.171Z\",\n      \"job_id\": \"c0d8d9db-2bbc-5a36-89ff-0c0455f6e73e\",\n      \"policy_model_assignment_id\": \"fa8f9d5a-67f2-3c48-62e2-0dd1dd8521dd\"\n    },\n    {\n      \"alert_rule_id\": \"fa98a902-650d-d556-f1ce-0f0aef94b176\",\n      \"status\": \"fired\",\n      \"timestamp\": \"1990-01-03T13:39:57.315Z\",\n      \"job_id\": \"50f05557-c0e6-4fc2-3dfd-5f69c3a92072\",\n      \"policy_model_assignment_id\": \"1d55e128-c45c-152c-3b3f-65e0db78ff9c\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"created_at\": \"2021-12-21T17:53:31.388Z\",\n      \"updated_at\": \"1950-01-05T02:35:33.718Z\",\n      \"id\": \"5a2718b2-d001-cfa3-74f0-212593f4df4a\",\n      \"alert_rule_id\": \"798b191e-a0b4-bfe7-2df2-c2d0923833dd\",\n      \"model_id\": \"1dec3a36-b637-8e13-51bd-94c761b913a4\",\n      \"status\": \"fired\",\n      \"timestamp\": \"2014-04-02T22:49:51.516Z\",\n      \"job_id\": \"9546a08e-1242-ed56-18aa-30042475fea6\",\n      \"policy_model_assignment_id\": \"6901d1c6-7496-79a1-faf5-c04dd3a9670d\"\n    },\n    {\n      \"created_at\": \"2000-10-06T12:50:47.008Z\",\n      \"updated_at\": \"2005-12-02T23:43:34.135Z\",\n      \"id\": \"e180c59a-4677-08a1-e8dd-98c4c5ba860c\",\n      \"alert_rule_id\": \"5a537a3f-49fe-a107-e31c-86f2af69c273\",\n      \"model_id\": \"2a663f36-9478-a5ee-12a8-908736868135\",\n      \"status\": \"fired\",\n      \"timestamp\": \"1950-07-17T02:49:01.401Z\",\n      \"job_id\": \"866347b4-4d98-503e-54ac-5d296df3fc5e\",\n      \"policy_model_assignment_id\": \"843809f4-4514-0c21-b01a-b4b709519e3b\"\n    }\n  ],\n  \"pagination\": {\n    \"total_pages\": 4705,\n    \"total_records\": 266,\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9f1c7225-2277-4256-b68c-5a3c564bf944",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alert_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logs\": [\n    {\n      \"alert_rule_id\": \"632e98c3-17aa-df69-8a94-9b3fde45032a\",\n      \"status\": \"no_data\",\n      \"timestamp\": \"1976-04-26T23:28:31.171Z\",\n      \"job_id\": \"c0d8d9db-2bbc-5a36-89ff-0c0455f6e73e\",\n      \"policy_model_assignment_id\": \"fa8f9d5a-67f2-3c48-62e2-0dd1dd8521dd\"\n    },\n    {\n      \"alert_rule_id\": \"fa98a902-650d-d556-f1ce-0f0aef94b176\",\n      \"status\": \"fired\",\n      \"timestamp\": \"1990-01-03T13:39:57.315Z\",\n      \"job_id\": \"50f05557-c0e6-4fc2-3dfd-5f69c3a92072\",\n      \"policy_model_assignment_id\": \"1d55e128-c45c-152c-3b3f-65e0db78ff9c\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4913e4ee-3fa2-41ad-98e8-0d0e5f5a5127",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alert_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logs\": [\n    {\n      \"alert_rule_id\": \"632e98c3-17aa-df69-8a94-9b3fde45032a\",\n      \"status\": \"no_data\",\n      \"timestamp\": \"1976-04-26T23:28:31.171Z\",\n      \"job_id\": \"c0d8d9db-2bbc-5a36-89ff-0c0455f6e73e\",\n      \"policy_model_assignment_id\": \"fa8f9d5a-67f2-3c48-62e2-0dd1dd8521dd\"\n    },\n    {\n      \"alert_rule_id\": \"fa98a902-650d-d556-f1ce-0f0aef94b176\",\n      \"status\": \"fired\",\n      \"timestamp\": \"1990-01-03T13:39:57.315Z\",\n      \"job_id\": \"50f05557-c0e6-4fc2-3dfd-5f69c3a92072\",\n      \"policy_model_assignment_id\": \"1d55e128-c45c-152c-3b3f-65e0db78ff9c\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07603a8f-996d-421e-ae45-b12e0b1a4152",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alert_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logs\": [\n    {\n      \"alert_rule_id\": \"632e98c3-17aa-df69-8a94-9b3fde45032a\",\n      \"status\": \"no_data\",\n      \"timestamp\": \"1976-04-26T23:28:31.171Z\",\n      \"job_id\": \"c0d8d9db-2bbc-5a36-89ff-0c0455f6e73e\",\n      \"policy_model_assignment_id\": \"fa8f9d5a-67f2-3c48-62e2-0dd1dd8521dd\"\n    },\n    {\n      \"alert_rule_id\": \"fa98a902-650d-d556-f1ce-0f0aef94b176\",\n      \"status\": \"fired\",\n      \"timestamp\": \"1990-01-03T13:39:57.315Z\",\n      \"job_id\": \"50f05557-c0e6-4fc2-3dfd-5f69c3a92072\",\n      \"policy_model_assignment_id\": \"1d55e128-c45c-152c-3b3f-65e0db78ff9c\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a84e828-598f-4384-8586-afe29e21abe3",
+          "name": "Get Model Alert Logs",
+          "request": {
+            "name": "Get Model Alert Logs",
+            "description": {
+              "content": "Returns alert rule evaluation logs for a model. Requires model_list_alerts permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "models",
+                ":model_id",
+                "alert_logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "alert_rule_id",
+                  "value": "<uuid>",
+                  "description": "Filter by alert rule ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Filter by status."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_time",
+                  "value": "<dateTime>",
+                  "description": "Filter logs with bucket timestamp at or after this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "end_time",
+                  "value": "<dateTime>",
+                  "description": "Filter logs with bucket timestamp at or before this time."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "The page to return starting from 1 up to total_pages."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20",
+                  "description": "The number of records per page. The max is 1000."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "model_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1d9be17c-97d0-4c25-960f-472b56de15a0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alert_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "alert_rule_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fired"
+                    },
+                    {
+                      "key": "start_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"created_at\": \"2021-12-21T17:53:31.388Z\",\n      \"updated_at\": \"1950-01-05T02:35:33.718Z\",\n      \"id\": \"5a2718b2-d001-cfa3-74f0-212593f4df4a\",\n      \"alert_rule_id\": \"798b191e-a0b4-bfe7-2df2-c2d0923833dd\",\n      \"model_id\": \"1dec3a36-b637-8e13-51bd-94c761b913a4\",\n      \"status\": \"fired\",\n      \"timestamp\": \"2014-04-02T22:49:51.516Z\",\n      \"job_id\": \"9546a08e-1242-ed56-18aa-30042475fea6\",\n      \"policy_model_assignment_id\": \"6901d1c6-7496-79a1-faf5-c04dd3a9670d\"\n    },\n    {\n      \"created_at\": \"2000-10-06T12:50:47.008Z\",\n      \"updated_at\": \"2005-12-02T23:43:34.135Z\",\n      \"id\": \"e180c59a-4677-08a1-e8dd-98c4c5ba860c\",\n      \"alert_rule_id\": \"5a537a3f-49fe-a107-e31c-86f2af69c273\",\n      \"model_id\": \"2a663f36-9478-a5ee-12a8-908736868135\",\n      \"status\": \"fired\",\n      \"timestamp\": \"1950-07-17T02:49:01.401Z\",\n      \"job_id\": \"866347b4-4d98-503e-54ac-5d296df3fc5e\",\n      \"policy_model_assignment_id\": \"843809f4-4514-0c21-b01a-b4b709519e3b\"\n    }\n  ],\n  \"pagination\": {\n    \"total_pages\": 4705,\n    \"total_records\": 266,\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37c3adfd-777d-473d-9468-ae841f8c603b",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alert_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "alert_rule_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fired"
+                    },
+                    {
+                      "key": "start_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1ec0ce8c-6e05-4a91-a616-133e1b0f5ae8",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alert_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "alert_rule_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fired"
+                    },
+                    {
+                      "key": "start_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "596f7449-ac35-4cc0-a24c-6d62f70df23d",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "models",
+                    ":model_id",
+                    "alert_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "alert_rule_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "fired"
+                    },
+                    {
+                      "key": "start_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "end_time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "model_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "961e9b80-2e8f-4f51-86a4-34fb3a837a96",
+          "name": "Get Workspace Alerts.",
+          "request": {
+            "name": "Get Workspace Alerts.",
+            "description": {
+              "content": "Returns alerts from all models in the workspace matching the filter and sorting criteria. If multiple filters are specified, results will only be returned that match all of the specified criteria. Requires workspace_list_alerts permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "workspaces",
+                ":workspace_id",
+                "alerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "timestamp",
+                  "description": "Override the field used for sorting the returned list. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc",
+                  "description": "Override the sort order used. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "alert_rule_ids",
+                  "value": "<uuid>",
+                  "description": "The ID of the alert rule to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "alert_rule_ids",
+                  "value": "<uuid>",
+                  "description": "The ID of the alert rule to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "bound",
+                  "value": "<string>",
+                  "description": "The bound to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "time_from",
+                  "value": "<dateTime>",
+                  "description": "The start timestamp to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "time_to",
+                  "value": "<dateTime>",
+                  "description": "The end timestamp to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "The page to return starting from 1 up to total_pages."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20",
+                  "description": "The number of records per page. The max is 1000."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "workspace_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4534ec17-693e-4f39-977a-4a0a7d040e04",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"1998-05-18T15:46:41.241Z\",\n      \"value\": 1986.9064061358365,\n      \"threshold\": 7083.4011518788275,\n      \"bound\": \"lower_bound\",\n      \"interval\": {\n        \"unit\": \"seconds\",\n        \"count\": 7376\n      },\n      \"dimensions\": {\n        \"key_0\": 190,\n        \"key_1\": \"string\"\n      },\n      \"alert_rule_id\": \"dc79cc0d-365f-93fb-fbb6-7c173e69c79d\",\n      \"created_at\": \"2021-06-16T17:21:03.113Z\",\n      \"updated_at\": \"1985-06-12T17:44:14.956Z\",\n      \"id\": \"ca173d4a-1859-e347-8243-368d29585f46\",\n      \"model_id\": \"4ae4b135-00a1-ffb8-be4e-223b2f5565f7\",\n      \"alert_rule_name\": \"string\",\n      \"alert_rule_metric_name\": \"string\",\n      \"job_id\": \"0b383a83-9be7-ca60-5f3a-3a78ff06a732\",\n      \"is_duplicate_of\": \"131b7e57-bc9d-0d44-b045-4b0d5da0bc86\"\n    },\n    {\n      \"description\": \"string\",\n      \"timestamp\": \"2025-02-09T12:39:49.523Z\",\n      \"value\": 4823.302525432859,\n      \"threshold\": 8076.456410249031,\n      \"bound\": \"upper_bound\",\n      \"interval\": {\n        \"unit\": \"seconds\",\n        \"count\": 7331\n      },\n      \"dimensions\": {\n        \"key_0\": \"string\"\n      },\n      \"alert_rule_id\": \"e09daa97-cb8b-c65c-9509-c79341acf72f\",\n      \"created_at\": \"1976-03-25T02:13:18.162Z\",\n      \"updated_at\": \"1977-02-01T06:41:48.480Z\",\n      \"id\": \"85cb286b-ca5f-91e7-f93c-c1531c108557\",\n      \"model_id\": \"0e96c361-6225-22ef-bf1c-64cecceeef29\",\n      \"alert_rule_name\": \"string\",\n      \"alert_rule_metric_name\": \"string\",\n      \"job_id\": \"677b5bd5-e31e-3975-37cc-b58455cd6c44\",\n      \"is_duplicate_of\": \"f7059c62-73c2-9e61-6502-3936e48b2569\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07ef3674-2181-4a86-a12b-23564f4e4fbf",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a9bf9d56-4510-4a93-b859-d90c9da6bed7",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6efbdc4-9302-4a8d-ac57-35b40a423de8",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "alerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d4be9ed-e4f4-4005-9f72-2f331a1dddfa",
+          "name": "Get Workspace Alerts Grouped.",
+          "request": {
+            "name": "Get Workspace Alerts Grouped.",
+            "description": {
+              "content": "Returns alerts from all models in the workspace grouped by alert rule. Supports pagination and time range filtering with a default of the last 7 days. Requires workspace_list_alerts permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "workspaces",
+                ":workspace_id",
+                "alerts",
+                "grouped"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "timestamp",
+                  "description": "Override the field used for sorting the returned list. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc",
+                  "description": "Override the sort order used. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "alert_rule_ids",
+                  "value": "<uuid>",
+                  "description": "The ID of the alert rule to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "alert_rule_ids",
+                  "value": "<uuid>",
+                  "description": "The ID of the alert rule to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "bound",
+                  "value": "<string>",
+                  "description": "The bound to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "time_from",
+                  "value": "<dateTime>",
+                  "description": "The start timestamp to filter by. Defaults to 7 days ago if not specified."
+                },
+                {
+                  "disabled": false,
+                  "key": "time_to",
+                  "value": "<dateTime>",
+                  "description": "The end timestamp to filter by. Defaults to now if not specified."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "The page to return starting from 1 up to total_pages."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20",
+                  "description": "The number of records per page. The max is 1000."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "workspace_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7609947b-d410-4054-973b-736e29a3d0b9",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "alerts",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"alert_rule_id\": \"f3c712d4-4bd6-e249-9eb0-df3d0c697fa1\",\n      \"alert_rule_name\": \"string\",\n      \"count\": 4702,\n      \"latest_timestamp\": \"1998-06-04T02:39:19.951Z\",\n      \"model_id\": \"a6a76273-4dd1-add0-9d84-387625715647\",\n      \"model_name\": \"string\",\n      \"bound\": \"upper_bound\",\n      \"alerts\": [\n        {\n          \"description\": \"string\",\n          \"timestamp\": \"2013-06-14T09:03:05.147Z\",\n          \"value\": 7956.474144103506,\n          \"threshold\": 4909.778893719739,\n          \"bound\": \"lower_bound\",\n          \"interval\": {\n            \"unit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"count\": 1773\n          },\n          \"dimensions\": {\n            \"key_0\": 782,\n            \"key_1\": true,\n            \"key_2\": \"string\"\n          },\n          \"alert_rule_id\": \"30b9b058-2634-5ae2-1f94-27ae5cff6e88\",\n          \"created_at\": \"1962-06-30T12:20:09.582Z\",\n          \"updated_at\": \"2025-02-05T10:11:40.622Z\",\n          \"id\": \"39a531fb-0f18-4387-76c2-088f3179dd0b\",\n          \"model_id\": \"ac2e84fd-9e9e-5e43-048c-d148f45cca0c\",\n          \"alert_rule_name\": \"string\",\n          \"alert_rule_metric_name\": \"string\",\n          \"job_id\": \"9774d021-a26c-2551-5ba8-7a8a22e6241d\",\n          \"is_duplicate_of\": \"79326851-a4a3-a087-5641-a95d0294d1e3\"\n        },\n        {\n          \"description\": \"string\",\n          \"timestamp\": \"1972-07-05T15:38:32.805Z\",\n          \"value\": 612.5900247680704,\n          \"threshold\": 6091.950718850837,\n          \"bound\": \"upper_bound\",\n          \"interval\": {\n            \"unit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"count\": 7160\n          },\n          \"dimensions\": {\n            \"key_0\": true,\n            \"key_1\": 6236.918930792093\n          },\n          \"alert_rule_id\": \"33dd60f7-ab9b-417d-5828-cf588a7b62d4\",\n          \"created_at\": \"1969-12-31T11:30:21.468Z\",\n          \"updated_at\": \"1988-12-21T18:02:18.265Z\",\n          \"id\": \"97efb02f-2b73-871a-f6e0-2c990cd776dd\",\n          \"model_id\": \"cf5977f9-62c6-5c5a-a936-fe910e4f76c0\",\n          \"alert_rule_name\": \"string\",\n          \"alert_rule_metric_name\": \"string\",\n          \"job_id\": \"c39d8319-9669-ca6b-4828-d0117c487a1a\",\n          \"is_duplicate_of\": \"ea9214e9-f855-3e5b-809e-a06260e7d8cb\"\n        }\n      ]\n    },\n    {\n      \"alert_rule_id\": \"7cc07e94-ced9-31ee-f451-730c57958e6e\",\n      \"alert_rule_name\": \"string\",\n      \"count\": 6692,\n      \"latest_timestamp\": \"2000-01-18T23:22:20.266Z\",\n      \"model_id\": \"46a07506-a61b-8557-502f-a798548ca4e5\",\n      \"model_name\": \"string\",\n      \"bound\": \"lower_bound\",\n      \"alerts\": [\n        {\n          \"description\": \"string\",\n          \"timestamp\": \"1994-09-28T14:16:04.362Z\",\n          \"value\": 3553.534287362766,\n          \"threshold\": 3834.2248479918107,\n          \"bound\": \"lower_bound\",\n          \"interval\": {\n            \"unit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"count\": 8212\n          },\n          \"dimensions\": {\n            \"key_0\": false\n          },\n          \"alert_rule_id\": \"1377ec88-1393-8971-a3b4-9eb8458daa99\",\n          \"created_at\": \"2006-01-29T01:06:01.440Z\",\n          \"updated_at\": \"1986-09-06T02:53:09.885Z\",\n          \"id\": \"28b1c520-0916-3541-5d6d-6883276305a3\",\n          \"model_id\": \"d28499cf-6935-9186-7d81-579507d5d274\",\n          \"alert_rule_name\": \"string\",\n          \"alert_rule_metric_name\": \"string\",\n          \"job_id\": \"47a0352e-27c5-cc6d-bc2c-f4f611e49e78\",\n          \"is_duplicate_of\": \"6d6721d6-ac34-c274-4098-382f78277738\"\n        },\n        {\n          \"description\": \"string\",\n          \"timestamp\": \"2022-01-24T00:08:42.461Z\",\n          \"value\": 4409.162122525035,\n          \"threshold\": 8375.269485692546,\n          \"bound\": \"lower_bound\",\n          \"interval\": {\n            \"unit\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"count\": 6920\n          },\n          \"dimensions\": {\n            \"key_0\": \"string\"\n          },\n          \"alert_rule_id\": \"89b5f336-225c-1710-82d5-7ae082e2ec8b\",\n          \"created_at\": \"1963-09-29T02:37:15.042Z\",\n          \"updated_at\": \"1975-04-08T06:33:16.746Z\",\n          \"id\": \"ff2df25c-cce6-2947-1df6-d49bd7267fd5\",\n          \"model_id\": \"54a18cb6-52b8-3506-6bdb-3a3f89a22955\",\n          \"alert_rule_name\": \"string\",\n          \"alert_rule_metric_name\": \"string\",\n          \"job_id\": \"fede89a4-08f0-d3b0-22fb-7e1198118488\",\n          \"is_duplicate_of\": \"20a54a2c-2453-1610-d00e-45d9db59c622\"\n        }\n      ]\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd32aa29-e808-4b01-bccb-4b0c07cf9c5c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "alerts",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "76766b7d-3128-4009-b349-45326c313976",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "alerts",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1648ce9-867c-4da6-9412-e0c67ec4ad49",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "alerts",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "alert_rule_ids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "bound",
+                      "value": "upper_bound"
+                    },
+                    {
+                      "key": "time_from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "time_to",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "888e2cbf-f60a-4578-ac0a-741580d5fc54",
+          "name": "Get Alert By Id",
+          "request": {
+            "name": "Get Alert By Id",
+            "description": {
+              "content": "Returns a single alert by ID. Requires model_alert_read permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "alerts",
+                ":alert_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "alert_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3cb7a2b4-7e40-4391-9fd7-6876cc522fb8",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "alerts",
+                    ":alert_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "alert_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"timestamp\": \"1977-11-29T10:52:46.817Z\",\n  \"value\": 5275.196355417312,\n  \"threshold\": 9795.687970640365,\n  \"bound\": \"lower_bound\",\n  \"interval\": {\n    \"unit\": \"hours\",\n    \"count\": 2445\n  },\n  \"dimensions\": {\n    \"key_0\": true,\n    \"key_1\": 2265.2196597166185,\n    \"key_2\": 9078.080815936093,\n    \"key_3\": 3646.268362339222\n  },\n  \"alert_rule_id\": \"a0b38b44-392c-f6f4-38cc-7ef804d76558\",\n  \"created_at\": \"1967-03-08T23:38:20.621Z\",\n  \"updated_at\": \"1967-08-31T17:42:59.179Z\",\n  \"id\": \"9cca3c6d-4c76-5d02-24ba-1236513beacd\",\n  \"model_id\": \"b0595f82-c60c-1a86-d616-29d02384e76c\",\n  \"alert_rule_name\": \"string\",\n  \"alert_rule_metric_name\": \"string\",\n  \"job_id\": \"3b5d76f0-676b-14c9-8cc5-02b338f186e0\",\n  \"is_duplicate_of\": \"ba9e1455-5861-5cb0-c3f0-f9235c5d2660\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "15a5be59-42f4-4fcd-9b1d-d4287857658a",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "alerts",
+                    ":alert_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "alert_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2aaf643c-c294-4de0-aaa1-5ba88a43553a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "alerts",
+                    ":alert_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "alert_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b5cbf56-e169-487a-9577-059bcf84b599",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "alerts",
+                    ":alert_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "alert_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f6646aec-652c-4a9f-9881-939564dd3645",
+    "name": "Arthur Scope Agents V1 Alerts V1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

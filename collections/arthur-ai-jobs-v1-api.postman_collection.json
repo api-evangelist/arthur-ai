@@ -1,0 +1,4468 @@
+{
+  "item": [
+    {
+      "id": "8aa98c83-422f-45bf-94e2-39022179f4f2",
+      "name": "Jobs V1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fac530a5-9cf2-4ead-9717-8f0dd8fbc100",
+          "name": "Get Job By Id",
+          "request": {
+            "name": "Get Job By Id",
+            "description": {
+              "content": "Returns a single job by ID. Requires project_job_read permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ":job_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ae42143e-2857-4d95-a861-4b3ef769bbe2",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"612a8193-05b8-ee31-9ee7-61dc31f45ec6\",\n  \"kind\": \"test_custom_aggregation\",\n  \"job_spec\": {\n    \"start_timestamp\": \"2022-04-25T08:40:20.238Z\",\n    \"end_timestamp\": \"1963-11-18T10:42:14.864Z\",\n    \"operation_id\": \"bef2aa21-fb11-fe6f-bc58-e6dfde8ad8bc\",\n    \"data_filters\": [\n      {\n        \"field_name\": \"string\",\n        \"op\": \"in\",\n        \"value\": {}\n      },\n      {\n        \"field_name\": \"string\",\n        \"op\": \"less_than_or_equal\",\n        \"value\": {}\n      }\n    ],\n    \"pagination_options\": {\n      \"page\": 1,\n      \"page_size\": 25\n    },\n    \"job_type\": \"fetch_data\",\n    \"dataset_id\": \"bc3102c7-08b3-1a21-8c32-c81eaf4fcaa5\",\n    \"available_dataset_id\": \"3575e985-da7c-4112-b14d-cf5f513e4d85\"\n  },\n  \"state\": \"completed\",\n  \"project_id\": \"c73b9b74-5ed7-251b-d5e5-94563e2b2352\",\n  \"queued_at\": \"1998-08-31T19:30:22.234Z\",\n  \"ready_at\": \"1967-01-29T22:03:02.844Z\",\n  \"trigger_type\": \"event\",\n  \"attempts\": 4193,\n  \"max_attempts\": 230,\n  \"memory_requirements_mb\": 7759,\n  \"job_priority\": 400,\n  \"data_plane_id\": \"1f984efe-9452-1432-df68-0aa06c52b7c0\",\n  \"started_at\": \"2002-01-04T16:41:25.097Z\",\n  \"finished_at\": \"2011-06-09T01:21:04.635Z\",\n  \"duration_sec\": 9681,\n  \"error_count\": 8013,\n  \"triggered_by_user\": {\n    \"created_at\": \"1968-05-13T22:39:10.128Z\",\n    \"updated_at\": \"1956-11-16T18:41:24.413Z\",\n    \"organization_id\": \"string\",\n    \"id\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"user_type\": \"service_account\",\n    \"organization_name\": \"string\",\n    \"email\": \"Hc6bPMiiRil@xlySBnZpINWwsksl.pu\",\n    \"picture\": \"string\",\n    \"data_plane_id\": \"8fe91ab6-5945-c2fc-01b4-c4e849fedc0d\",\n    \"client_id\": \"string\"\n  },\n  \"schedule_id\": \"4edef6b0-91ca-072d-65f8-d04afa9e1abc\",\n  \"nonce\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9e161262-ecca-4e43-9e7d-b2e684bf1301",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78804f37-517d-4d2b-b265-e88fe0f89a83",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a7bdaa0-04fb-4dba-b04c-dd17dfadf721",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7a76535-1797-41d1-9abc-4d11139afb32",
+          "name": "Update Job By Id",
+          "request": {
+            "name": "Update Job By Id",
+            "description": {
+              "content": "Updates a single job by ID. Requires project_job_update permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ":job_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"max_attempts\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "01abdd3e-51d6-4800-8ad2-01c0cf1fb127",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"max_attempts\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"612a8193-05b8-ee31-9ee7-61dc31f45ec6\",\n  \"kind\": \"test_custom_aggregation\",\n  \"job_spec\": {\n    \"start_timestamp\": \"2022-04-25T08:40:20.238Z\",\n    \"end_timestamp\": \"1963-11-18T10:42:14.864Z\",\n    \"operation_id\": \"bef2aa21-fb11-fe6f-bc58-e6dfde8ad8bc\",\n    \"data_filters\": [\n      {\n        \"field_name\": \"string\",\n        \"op\": \"in\",\n        \"value\": {}\n      },\n      {\n        \"field_name\": \"string\",\n        \"op\": \"less_than_or_equal\",\n        \"value\": {}\n      }\n    ],\n    \"pagination_options\": {\n      \"page\": 1,\n      \"page_size\": 25\n    },\n    \"job_type\": \"fetch_data\",\n    \"dataset_id\": \"bc3102c7-08b3-1a21-8c32-c81eaf4fcaa5\",\n    \"available_dataset_id\": \"3575e985-da7c-4112-b14d-cf5f513e4d85\"\n  },\n  \"state\": \"completed\",\n  \"project_id\": \"c73b9b74-5ed7-251b-d5e5-94563e2b2352\",\n  \"queued_at\": \"1998-08-31T19:30:22.234Z\",\n  \"ready_at\": \"1967-01-29T22:03:02.844Z\",\n  \"trigger_type\": \"event\",\n  \"attempts\": 4193,\n  \"max_attempts\": 230,\n  \"memory_requirements_mb\": 7759,\n  \"job_priority\": 400,\n  \"data_plane_id\": \"1f984efe-9452-1432-df68-0aa06c52b7c0\",\n  \"started_at\": \"2002-01-04T16:41:25.097Z\",\n  \"finished_at\": \"2011-06-09T01:21:04.635Z\",\n  \"duration_sec\": 9681,\n  \"error_count\": 8013,\n  \"triggered_by_user\": {\n    \"created_at\": \"1968-05-13T22:39:10.128Z\",\n    \"updated_at\": \"1956-11-16T18:41:24.413Z\",\n    \"organization_id\": \"string\",\n    \"id\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"user_type\": \"service_account\",\n    \"organization_name\": \"string\",\n    \"email\": \"Hc6bPMiiRil@xlySBnZpINWwsksl.pu\",\n    \"picture\": \"string\",\n    \"data_plane_id\": \"8fe91ab6-5945-c2fc-01b4-c4e849fedc0d\",\n    \"client_id\": \"string\"\n  },\n  \"schedule_id\": \"4edef6b0-91ca-072d-65f8-d04afa9e1abc\",\n  \"nonce\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43d59034-92b6-4caf-83dc-afa51962a8cf",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"max_attempts\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7bea64da-f901-4fb6-be70-80c7d47903d4",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"max_attempts\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54322fe4-5b1f-4fab-96f5-da5408b7c22d",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"max_attempts\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b102030e-b623-45ec-b193-428e3df12132",
+          "name": "Update Job State",
+          "request": {
+            "name": "Update Job State",
+            "description": {
+              "content": "Update job state. Requires project_job_put_state permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ":job_id",
+                "state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "job_run_id",
+                  "value": "<uuid>",
+                  "description": "(Required) Job run ID associated with the state update."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"job_state\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fdcc703c-abed-4411-be67-676369b29cb6",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "job_run_id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job_state\": \"cancelled\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"612a8193-05b8-ee31-9ee7-61dc31f45ec6\",\n  \"kind\": \"test_custom_aggregation\",\n  \"job_spec\": {\n    \"start_timestamp\": \"2022-04-25T08:40:20.238Z\",\n    \"end_timestamp\": \"1963-11-18T10:42:14.864Z\",\n    \"operation_id\": \"bef2aa21-fb11-fe6f-bc58-e6dfde8ad8bc\",\n    \"data_filters\": [\n      {\n        \"field_name\": \"string\",\n        \"op\": \"in\",\n        \"value\": {}\n      },\n      {\n        \"field_name\": \"string\",\n        \"op\": \"less_than_or_equal\",\n        \"value\": {}\n      }\n    ],\n    \"pagination_options\": {\n      \"page\": 1,\n      \"page_size\": 25\n    },\n    \"job_type\": \"fetch_data\",\n    \"dataset_id\": \"bc3102c7-08b3-1a21-8c32-c81eaf4fcaa5\",\n    \"available_dataset_id\": \"3575e985-da7c-4112-b14d-cf5f513e4d85\"\n  },\n  \"state\": \"completed\",\n  \"project_id\": \"c73b9b74-5ed7-251b-d5e5-94563e2b2352\",\n  \"queued_at\": \"1998-08-31T19:30:22.234Z\",\n  \"ready_at\": \"1967-01-29T22:03:02.844Z\",\n  \"trigger_type\": \"event\",\n  \"attempts\": 4193,\n  \"max_attempts\": 230,\n  \"memory_requirements_mb\": 7759,\n  \"job_priority\": 400,\n  \"data_plane_id\": \"1f984efe-9452-1432-df68-0aa06c52b7c0\",\n  \"started_at\": \"2002-01-04T16:41:25.097Z\",\n  \"finished_at\": \"2011-06-09T01:21:04.635Z\",\n  \"duration_sec\": 9681,\n  \"error_count\": 8013,\n  \"triggered_by_user\": {\n    \"created_at\": \"1968-05-13T22:39:10.128Z\",\n    \"updated_at\": \"1956-11-16T18:41:24.413Z\",\n    \"organization_id\": \"string\",\n    \"id\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"user_type\": \"service_account\",\n    \"organization_name\": \"string\",\n    \"email\": \"Hc6bPMiiRil@xlySBnZpINWwsksl.pu\",\n    \"picture\": \"string\",\n    \"data_plane_id\": \"8fe91ab6-5945-c2fc-01b4-c4e849fedc0d\",\n    \"client_id\": \"string\"\n  },\n  \"schedule_id\": \"4edef6b0-91ca-072d-65f8-d04afa9e1abc\",\n  \"nonce\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "eda3870b-7ade-4d1b-a2f6-dac36f9c8633",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "job_run_id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job_state\": \"cancelled\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c49d6099-3e85-4950-ad54-c472f9a70168",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "job_run_id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job_state\": \"cancelled\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa8a541c-e0ef-4983-ab1d-b193a38aa79c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "job_run_id",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job_state\": \"cancelled\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e735e51a-9262-4d75-a85c-dbd1183ccd13",
+          "name": "Get Job Runs",
+          "request": {
+            "name": "Get Job Runs",
+            "description": {
+              "content": "Get Job runs. Required project_job_read_runs permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ":job_id",
+                "runs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e9079939-d5ae-4bf5-b4e9-2461a64e0774",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"id\": \"7697698a-43b0-4db7-c08b-4c29484ea32d\",\n      \"job_id\": \"ac8e9218-5580-7f53-d788-ac65631a38a7\",\n      \"state\": \"queued\",\n      \"job_attempt\": 5973,\n      \"start_timestamp\": \"2012-09-30T14:04:52.113Z\",\n      \"end_timestamp\": \"1997-01-08T21:21:14.079Z\"\n    },\n    {\n      \"id\": \"1c3d7c82-8383-231b-1662-116aebbc49f1\",\n      \"job_id\": \"9bb53594-408a-5336-d5c6-2bd5e224e40a\",\n      \"state\": \"completed\",\n      \"job_attempt\": 4588,\n      \"start_timestamp\": \"1952-02-15T21:16:05.854Z\",\n      \"end_timestamp\": \"1947-04-04T22:32:21.157Z\"\n    }\n  ],\n  \"pagination\": {\n    \"total_pages\": 6622,\n    \"total_records\": 4249,\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b739d68c-802d-4642-b117-1d5f6fc581df",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71d71387-f2b5-40be-93dc-7c795424efd7",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "711b568d-9cc8-49ec-96f2-f873ccc0df1a",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1dc80e68-25d3-4b71-84f5-4ffeab367eb1",
+          "name": "Append To Job Logs",
+          "request": {
+            "name": "Append To Job Logs",
+            "description": {
+              "content": "Append job logs. Requires project_job_append_logs permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ":job_id",
+                "runs",
+                ":job_run_id",
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_run_id",
+                  "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"logs\": [\n    {\n      \"log_level\": \"<string>\",\n      \"log\": \"<string>\",\n      \"log_timestamp\": \"<dateTime>\"\n    },\n    {\n      \"log_level\": \"<string>\",\n      \"log\": \"<string>\",\n      \"log_timestamp\": \"<dateTime>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f7afc73d-6c48-4d80-b7f8-8af450b7cb0a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logs\": [\n    {\n      \"log_level\": \"error\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"1964-05-09T16:54:39.231Z\"\n    },\n    {\n      \"log_level\": \"critical\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"2018-08-30T18:20:10.794Z\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "13d8097c-ad2b-453d-95a2-af53fc67d4b3",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logs\": [\n    {\n      \"log_level\": \"error\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"1964-05-09T16:54:39.231Z\"\n    },\n    {\n      \"log_level\": \"critical\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"2018-08-30T18:20:10.794Z\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1b1a9986-309a-40d6-bd54-afc4944e4893",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logs\": [\n    {\n      \"log_level\": \"error\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"1964-05-09T16:54:39.231Z\"\n    },\n    {\n      \"log_level\": \"critical\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"2018-08-30T18:20:10.794Z\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17e6eee0-06fd-4bb8-bba5-806535bdce3c",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"logs\": [\n    {\n      \"log_level\": \"error\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"1964-05-09T16:54:39.231Z\"\n    },\n    {\n      \"log_level\": \"critical\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"2018-08-30T18:20:10.794Z\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2008308b-c58f-49f0-a988-ca005d25730a",
+          "name": "Get Job Logs",
+          "request": {
+            "name": "Get Job Logs",
+            "description": {
+              "content": "Get job logs for a run. Requires project_job_read_logs permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ":job_id",
+                "runs",
+                ":job_run_id",
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc",
+                  "description": "Override the sort order used. Optional."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_run_id",
+                  "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5dc7a86b-3246-4b55-966c-e765362db9db",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"log_level\": \"debug\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"2019-09-04T06:00:19.782Z\"\n    },\n    {\n      \"log_level\": \"warning\",\n      \"log\": \"string\",\n      \"log_timestamp\": \"1956-11-15T14:40:24.155Z\"\n    }\n  ],\n  \"pagination\": {\n    \"total_pages\": 8932,\n    \"total_records\": 5472,\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "12bbd562-cb92-4a19-8d20-eb2e7c58b2a8",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "deeb4a01-59ea-40b2-bc25-1ef50df7fce9",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5d2a15d8-95c0-49c3-94fb-bd4bfa60f92b",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the logs. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e48af9e-a2a1-4d97-837e-2f48362f91ba",
+          "name": "Append To Job Errors",
+          "request": {
+            "name": "Append To Job Errors",
+            "description": {
+              "content": "Append job errors. Requires project_job_append_errors permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ":job_id",
+                "runs",
+                ":job_run_id",
+                "errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_run_id",
+                  "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"errors\": [\n    {\n      \"error\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5e34c84b-e820-418e-bfb3-e2aa303bf261",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"errors\": [\n    {\n      \"error\": \"string\"\n    },\n    {\n      \"error\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "23143d4e-7eed-4024-995e-e833641cba37",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"errors\": [\n    {\n      \"error\": \"string\"\n    },\n    {\n      \"error\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1abb9252-526c-4b53-9185-c2f3d9deee04",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"errors\": [\n    {\n      \"error\": \"string\"\n    },\n    {\n      \"error\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4bf36e6b-9cbe-4bee-900a-26902e401781",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"errors\": [\n    {\n      \"error\": \"string\"\n    },\n    {\n      \"error\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d69f6b96-0f07-4bd0-9b7a-a0bf954cf97c",
+          "name": "Get Job Errors",
+          "request": {
+            "name": "Get Job Errors",
+            "description": {
+              "content": "Get job errors. Requires project_job_read_errors permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "jobs",
+                ":job_id",
+                "runs",
+                ":job_run_id",
+                "errors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "job_run_id",
+                  "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ce285c3c-e90c-4374-87e6-28da23596668",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"error\": \"string\"\n    },\n    {\n      \"error\": \"string\"\n    }\n  ],\n  \"pagination\": {\n    \"total_pages\": 5498,\n    \"total_records\": 5449,\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "69b0e1fd-fb11-42b8-b7ee-563dcb58c6d5",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "53a96864-cedc-42d5-837b-cc2d0b903260",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d67a1dd-1933-4a76-9f81-003e03edd946",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "jobs",
+                    ":job_id",
+                    "runs",
+                    ":job_run_id",
+                    "errors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "job_run_id",
+                      "description": "(Required) The job run associated with the errors. Should be formatted as a UUID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fbfb8ad7-3465-4409-b77d-67fadfcbc78e",
+          "name": "List Jobs",
+          "request": {
+            "name": "List Jobs",
+            "description": {
+              "content": "Returns jobs in the project matching the filter and sorting criteria. If multiple filters are specified, results will only be returned that match all of the specified criteria. Requires project_list_jobs permission. Note: exclude_kinds takes precedence over kinds and will exclude jobs even if they are in kinds.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                ":project_id",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "queued_at",
+                  "description": "Override the field used for sorting the returned list. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc",
+                  "description": "Override the sort order used. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "duration_sec_greater_than",
+                  "value": "<integer>",
+                  "description": "Filter the results for jobs that ran for greater than or equal to this number of seconds. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "duration_sec_less_than",
+                  "value": "<integer>",
+                  "description": "Filter the results for the jobs that ran for less than or equal to this number of seconds. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "started_before",
+                  "value": "<dateTime>",
+                  "description": "Filter the results for the jobs that started before this timestamp. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "started_after",
+                  "value": "<dateTime>",
+                  "description": "Filter the results for the jobs that started after this timestamp. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "queued_before",
+                  "value": "<dateTime>",
+                  "description": "Filter the results for the jobs that were queued before this timestamp. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "queued_after",
+                  "value": "<dateTime>",
+                  "description": "Filter the results for the jobs that were queued after this timestamp. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "ready_before",
+                  "value": "<dateTime>",
+                  "description": "Filter the results for the jobs that are ready before this timestamp. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "ready_before_current_time",
+                  "value": "false",
+                  "description": "When true, filters jobs ready before the current server time. Takes precedence over ready_before. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "ready_after",
+                  "value": "<dateTime>",
+                  "description": "Filter the results for the jobs that are ready after this timestamp. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "ready_after_current_time",
+                  "value": "false",
+                  "description": "When true, filters jobs ready after the current server time. Takes precedence over ready_after. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "finished_before",
+                  "value": "<dateTime>",
+                  "description": "Filter the results for the jobs that finished before this timestamp. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "finished_after",
+                  "value": "<dateTime>",
+                  "description": "Filter the results for the jobs that finished after this timestamp. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "kinds",
+                  "value": "<string>",
+                  "description": "Filter the results for the jobs of this kind. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "kinds",
+                  "value": "<string>",
+                  "description": "Filter the results for the jobs of this kind. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_kinds",
+                  "value": "<string>",
+                  "description": "Exclude jobs of these kinds. Takes precedence over kinds."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_kinds",
+                  "value": "<string>",
+                  "description": "Exclude jobs of these kinds. Takes precedence over kinds."
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>",
+                  "description": "Filter the results for jobs in these states. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "states",
+                  "value": "<string>",
+                  "description": "Filter the results for jobs in these states. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "error_count_above",
+                  "value": "<integer>",
+                  "description": "Filter the results for the jobs that had greater than or equal to this many errors. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "data_plane_id",
+                  "value": "<uuid>",
+                  "description": "Filter the results for the jobs that were ran on this dataplane. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "schedule_id",
+                  "value": "<uuid>",
+                  "description": "Filter the results for jobs associated with this schedule ID. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "trigger_type",
+                  "value": "<string>",
+                  "description": "Filter the results for the jobs that were started by this trigger type. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "triggered_by_user_id",
+                  "value": "<uuid>",
+                  "description": "Filter the results for the jobs that started by this user id. Only valid when trigger_type = 'user'. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "triggered_by_user_email",
+                  "value": "<email>",
+                  "description": "Filter the results for the jobs that started by this user email. Only valid when trigger_type = 'user'. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "model_id",
+                  "value": "<uuid>",
+                  "description": "Filter the results for jobs associated with this model ID. Includes jobs associated with datasets used by the model. Optional."
+                },
+                {
+                  "disabled": false,
+                  "key": "nonce",
+                  "value": "<string>",
+                  "description": "Filter the results for jobs that match a job nonce used to ensure exactly once execution."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "The page to return starting from 1 up to total_pages."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20",
+                  "description": "The number of records per page. The max is 1000."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "project_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e56e8006-8974-40ca-9b07-e94a7f2b6c05",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "queued_at"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "duration_sec_greater_than",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "duration_sec_less_than",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "started_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "started_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "queued_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "queued_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_before_current_time",
+                      "value": "false"
+                    },
+                    {
+                      "key": "ready_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_after_current_time",
+                      "value": "false"
+                    },
+                    {
+                      "key": "finished_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "finished_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "kinds",
+                      "value": "create_model_task"
+                    },
+                    {
+                      "key": "kinds",
+                      "value": "test_custom_aggregation"
+                    },
+                    {
+                      "key": "exclude_kinds",
+                      "value": "connector_check"
+                    },
+                    {
+                      "key": "exclude_kinds",
+                      "value": "schema_inspection"
+                    },
+                    {
+                      "key": "states",
+                      "value": "failed"
+                    },
+                    {
+                      "key": "states",
+                      "value": "running"
+                    },
+                    {
+                      "key": "error_count_above",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "data_plane_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "schedule_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "trigger_type",
+                      "value": "event"
+                    },
+                    {
+                      "key": "triggered_by_user_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "triggered_by_user_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "model_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "nonce",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"id\": \"f19b3edb-fcd0-b5fe-e6e6-c66350d55cc6\",\n      \"kind\": \"delete_model_task\",\n      \"job_spec\": {\n        \"start_timestamp\": \"1971-04-09T01:42:46.524Z\",\n        \"end_timestamp\": \"1955-12-30T07:50:53.428Z\",\n        \"operation_id\": \"19d3c41c-649a-d94d-5e0e-c915b994dac8\",\n        \"data_filters\": [\n          {\n            \"field_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"op\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"field_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"op\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"pagination_options\": {\n          \"page\": 1,\n          \"page_size\": 25\n        },\n        \"job_type\": \"fetch_data\",\n        \"dataset_id\": \"c0e0ccfc-bb0f-f073-3a7e-bc14d988d412\",\n        \"available_dataset_id\": \"529cb217-ec28-58b4-2834-634b6077d192\"\n      },\n      \"state\": \"running\",\n      \"project_id\": \"224adbdf-2428-705f-91bd-1c41b8de745c\",\n      \"queued_at\": \"2007-04-22T16:43:27.451Z\",\n      \"ready_at\": \"1980-03-29T13:00:19.580Z\",\n      \"trigger_type\": \"event\",\n      \"attempts\": 223,\n      \"max_attempts\": 3899,\n      \"memory_requirements_mb\": 3064,\n      \"job_priority\": 300,\n      \"data_plane_id\": \"4aa69e1d-1ecb-09d5-2025-789375f2afc4\",\n      \"started_at\": \"1981-01-17T08:43:41.729Z\",\n      \"finished_at\": \"1953-01-27T19:20:53.526Z\",\n      \"duration_sec\": 6033,\n      \"error_count\": 3155,\n      \"triggered_by_user\": {\n        \"created_at\": \"2016-10-29T17:44:29.669Z\",\n        \"updated_at\": \"1967-09-28T00:11:08.996Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"data_plane\",\n        \"organization_name\": \"string\",\n        \"email\": \"UPGa1gigKA@DhXTHl.gsrz\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"322fc279-6974-f141-7ec8-d0f735669dcf\",\n        \"client_id\": \"string\"\n      },\n      \"schedule_id\": \"8248e6ca-ede7-36c9-2b3f-717455e98998\",\n      \"nonce\": \"string\"\n    },\n    {\n      \"id\": \"642a3cde-a967-a1a5-09cc-aab62f19ae8a\",\n      \"kind\": \"schedule_jobs\",\n      \"job_spec\": {\n        \"start_timestamp\": \"1989-05-25T00:05:28.692Z\",\n        \"end_timestamp\": \"1998-12-31T21:42:58.466Z\",\n        \"operation_id\": \"8047e9b9-1de2-ba63-69a1-6848d5c7cb79\",\n        \"data_filters\": [\n          {\n            \"field_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"op\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"field_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"op\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"pagination_options\": {\n          \"page\": 1,\n          \"page_size\": 25\n        },\n        \"job_type\": \"fetch_data\",\n        \"dataset_id\": \"64f7ffb0-6d07-a7f5-7d3f-10dc36e117ad\",\n        \"available_dataset_id\": \"688578c8-999b-0cac-9b42-78957148fda0\"\n      },\n      \"state\": \"failed\",\n      \"project_id\": \"bee1f6bb-7dc2-45c5-b622-3f7598bd83c1\",\n      \"queued_at\": \"1960-03-03T05:57:55.003Z\",\n      \"ready_at\": \"1996-06-08T16:10:31.415Z\",\n      \"trigger_type\": \"user\",\n      \"attempts\": 4542,\n      \"max_attempts\": 5916,\n      \"memory_requirements_mb\": 4743,\n      \"job_priority\": 300,\n      \"data_plane_id\": \"e749bbd1-9a1c-7882-7c1e-2391fdfda174\",\n      \"started_at\": \"1954-08-12T23:11:44.991Z\",\n      \"finished_at\": \"2003-03-13T13:01:18.716Z\",\n      \"duration_sec\": 3315,\n      \"error_count\": 5711,\n      \"triggered_by_user\": {\n        \"created_at\": \"1961-01-16T08:23:19.008Z\",\n        \"updated_at\": \"1950-09-06T20:51:48.209Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"service_account\",\n        \"organization_name\": \"string\",\n        \"email\": \"PTmgGFj2OqbXk9b@SmJbOaYRuQruLyGFZT.owqe\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"a06d4f04-a57c-389e-d486-70458b7ccbf7\",\n        \"client_id\": \"string\"\n      },\n      \"schedule_id\": \"8930cd30-7a9c-651a-6abe-6d6fab01cc88\",\n      \"nonce\": \"string\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a82fcac1-09e8-4fcd-b951-fe88db458b68",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "queued_at"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "duration_sec_greater_than",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "duration_sec_less_than",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "started_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "started_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "queued_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "queued_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_before_current_time",
+                      "value": "false"
+                    },
+                    {
+                      "key": "ready_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_after_current_time",
+                      "value": "false"
+                    },
+                    {
+                      "key": "finished_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "finished_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "kinds",
+                      "value": "create_model_task"
+                    },
+                    {
+                      "key": "kinds",
+                      "value": "test_custom_aggregation"
+                    },
+                    {
+                      "key": "exclude_kinds",
+                      "value": "connector_check"
+                    },
+                    {
+                      "key": "exclude_kinds",
+                      "value": "schema_inspection"
+                    },
+                    {
+                      "key": "states",
+                      "value": "failed"
+                    },
+                    {
+                      "key": "states",
+                      "value": "running"
+                    },
+                    {
+                      "key": "error_count_above",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "data_plane_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "schedule_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "trigger_type",
+                      "value": "event"
+                    },
+                    {
+                      "key": "triggered_by_user_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "triggered_by_user_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "model_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "nonce",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a51372b-1335-4f97-acf8-14567d5c409d",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "queued_at"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "duration_sec_greater_than",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "duration_sec_less_than",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "started_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "started_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "queued_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "queued_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_before_current_time",
+                      "value": "false"
+                    },
+                    {
+                      "key": "ready_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_after_current_time",
+                      "value": "false"
+                    },
+                    {
+                      "key": "finished_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "finished_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "kinds",
+                      "value": "create_model_task"
+                    },
+                    {
+                      "key": "kinds",
+                      "value": "test_custom_aggregation"
+                    },
+                    {
+                      "key": "exclude_kinds",
+                      "value": "connector_check"
+                    },
+                    {
+                      "key": "exclude_kinds",
+                      "value": "schema_inspection"
+                    },
+                    {
+                      "key": "states",
+                      "value": "failed"
+                    },
+                    {
+                      "key": "states",
+                      "value": "running"
+                    },
+                    {
+                      "key": "error_count_above",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "data_plane_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "schedule_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "trigger_type",
+                      "value": "event"
+                    },
+                    {
+                      "key": "triggered_by_user_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "triggered_by_user_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "model_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "nonce",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6baa9033-5634-4348-aa60-0fd56a7b1633",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort",
+                      "value": "queued_at"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "duration_sec_greater_than",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "duration_sec_less_than",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "started_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "started_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "queued_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "queued_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_before_current_time",
+                      "value": "false"
+                    },
+                    {
+                      "key": "ready_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "ready_after_current_time",
+                      "value": "false"
+                    },
+                    {
+                      "key": "finished_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "finished_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "kinds",
+                      "value": "create_model_task"
+                    },
+                    {
+                      "key": "kinds",
+                      "value": "test_custom_aggregation"
+                    },
+                    {
+                      "key": "exclude_kinds",
+                      "value": "connector_check"
+                    },
+                    {
+                      "key": "exclude_kinds",
+                      "value": "schema_inspection"
+                    },
+                    {
+                      "key": "states",
+                      "value": "failed"
+                    },
+                    {
+                      "key": "states",
+                      "value": "running"
+                    },
+                    {
+                      "key": "error_count_above",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "data_plane_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "schedule_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "trigger_type",
+                      "value": "event"
+                    },
+                    {
+                      "key": "triggered_by_user_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "triggered_by_user_email",
+                      "value": "<email>"
+                    },
+                    {
+                      "key": "model_id",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "nonce",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e7933b1-639c-4cbf-a724-e8917ddfcefd",
+          "name": "Submit Jobs Batch",
+          "request": {
+            "name": "Submit Jobs Batch",
+            "description": {
+              "content": "Submit new jobs to run. Requires project_create_job permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "projects",
+                ":project_id",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "project_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jobs\": [\n    {\n      \"kind\": \"<string>\",\n      \"job_spec\": {\n        \"scope_model_id\": \"<uuid>\",\n        \"start_timestamp\": \"<dateTime>\",\n        \"end_timestamp\": \"<dateTime>\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"<uuid>\"\n      },\n      \"schedule_id\": \"<uuid>\",\n      \"ready_at\": \"<dateTime>\",\n      \"nonce\": \"<string>\",\n      \"job_priority\": \"<integer>\"\n    },\n    {\n      \"kind\": \"<string>\",\n      \"job_spec\": {\n        \"scope_model_id\": \"<uuid>\",\n        \"start_timestamp\": \"<dateTime>\",\n        \"end_timestamp\": \"<dateTime>\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"<uuid>\"\n      },\n      \"schedule_id\": \"<uuid>\",\n      \"ready_at\": \"<dateTime>\",\n      \"nonce\": \"<string>\",\n      \"job_priority\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "132e65c8-3cd7-40cf-860e-537570bf50de",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobs\": [\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"2add1fd0-29e6-f2ec-f1d8-855aa9df6575\",\n        \"start_timestamp\": \"1958-02-20T23:13:30.197Z\",\n        \"end_timestamp\": \"1993-06-10T11:24:49.692Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"cb696b79-d533-b606-5388-00173703a0c6\"\n      },\n      \"schedule_id\": \"a4c4f291-92c0-ac40-31d0-b443af962823\",\n      \"ready_at\": \"1983-09-21T00:36:46.614Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 200\n    },\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"0a632bbb-94e1-97b2-6c7a-3cec58c24f2c\",\n        \"start_timestamp\": \"2005-12-04T00:49:54.428Z\",\n        \"end_timestamp\": \"2000-07-28T10:13:43.161Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"38a13ad5-e271-f775-fc58-66cd62e57d80\"\n      },\n      \"schedule_id\": \"12e30a1f-cbdc-4608-773a-9cb998556284\",\n      \"ready_at\": \"1972-09-28T13:05:46.242Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 300\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobs\": [\n    {\n      \"id\": \"3eca6b24-8b87-2978-1bcb-9f789b42c67e\",\n      \"kind\": \"list_datasets\",\n      \"job_spec\": {\n        \"start_timestamp\": \"1957-08-28T05:14:25.265Z\",\n        \"end_timestamp\": \"1996-02-12T06:26:10.573Z\",\n        \"operation_id\": \"26730fa1-01af-5dd3-0b97-d68d0930145a\",\n        \"data_filters\": [\n          {\n            \"field_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"op\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"field_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"op\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"pagination_options\": {\n          \"page\": 1,\n          \"page_size\": 25\n        },\n        \"job_type\": \"fetch_data\",\n        \"dataset_id\": \"52e8fc6d-fa5e-ff8d-1323-6d12fe7b4688\",\n        \"available_dataset_id\": \"5385f449-7383-75be-69d3-15bfb0454ab1\"\n      },\n      \"state\": \"queued\",\n      \"project_id\": \"5e6dfab2-9aa9-afc5-a137-84d8ad5ca839\",\n      \"queued_at\": \"1980-10-19T00:59:26.897Z\",\n      \"ready_at\": \"1961-05-01T05:14:39.198Z\",\n      \"trigger_type\": \"schedule\",\n      \"attempts\": 1934,\n      \"max_attempts\": 1303,\n      \"memory_requirements_mb\": 559,\n      \"job_priority\": 100,\n      \"data_plane_id\": \"865c47f4-0079-459d-d0b2-a0a015b0328b\",\n      \"started_at\": \"1992-12-24T16:17:57.483Z\",\n      \"finished_at\": \"2020-03-20T15:44:12.618Z\",\n      \"duration_sec\": 2385,\n      \"error_count\": 3926,\n      \"triggered_by_user\": {\n        \"created_at\": \"2009-03-03T22:43:41.370Z\",\n        \"updated_at\": \"1947-07-21T00:43:00.950Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"user\",\n        \"organization_name\": \"string\",\n        \"email\": \"3s8t2bZ1gz@NHbDxGYJjVSPrIEe.ju\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"b4a78226-52b8-1184-2916-ea57a803625a\",\n        \"client_id\": \"string\"\n      },\n      \"schedule_id\": \"ef15922a-6df7-e9ba-3a26-eec779b8ccc7\",\n      \"nonce\": \"string\"\n    },\n    {\n      \"id\": \"ed85955c-025f-f201-2f3a-4bf330415601\",\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"start_timestamp\": \"1991-05-07T20:15:26.231Z\",\n        \"end_timestamp\": \"1982-09-17T21:47:34.475Z\",\n        \"operation_id\": \"b3b05259-2099-4c91-55c2-6725823d1c90\",\n        \"data_filters\": [\n          {\n            \"field_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"op\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"field_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"op\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"pagination_options\": {\n          \"page\": 1,\n          \"page_size\": 25\n        },\n        \"job_type\": \"fetch_data\",\n        \"dataset_id\": \"99463a56-91f9-efd1-4105-cc4385a52f31\",\n        \"available_dataset_id\": \"47741435-6fe3-4bf5-306f-cb185bd26b18\"\n      },\n      \"state\": \"queued\",\n      \"project_id\": \"53911653-229c-3476-c6b0-dd24fbbfb58c\",\n      \"queued_at\": \"1980-12-09T01:46:31.329Z\",\n      \"ready_at\": \"2014-12-05T08:32:52.320Z\",\n      \"trigger_type\": \"user\",\n      \"attempts\": 8467,\n      \"max_attempts\": 6998,\n      \"memory_requirements_mb\": 2990,\n      \"job_priority\": 300,\n      \"data_plane_id\": \"70115be2-dd3e-848c-a850-6a3d40baf4d1\",\n      \"started_at\": \"2012-12-02T07:41:39.068Z\",\n      \"finished_at\": \"1947-08-13T20:52:31.127Z\",\n      \"duration_sec\": 7764,\n      \"error_count\": 8538,\n      \"triggered_by_user\": {\n        \"created_at\": \"2023-04-29T21:19:47.509Z\",\n        \"updated_at\": \"2004-01-13T11:24:53.643Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"user\",\n        \"organization_name\": \"string\",\n        \"email\": \"kMtjUF@c.yyxo\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"8229c40a-cb8f-b9cf-6655-263abb7c8100\",\n        \"client_id\": \"string\"\n      },\n      \"schedule_id\": \"72d3fc27-8c30-2d97-9d58-808f8e0602d8\",\n      \"nonce\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd7818b5-395d-48cb-9bd4-5a0dada9c583",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobs\": [\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"2add1fd0-29e6-f2ec-f1d8-855aa9df6575\",\n        \"start_timestamp\": \"1958-02-20T23:13:30.197Z\",\n        \"end_timestamp\": \"1993-06-10T11:24:49.692Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"cb696b79-d533-b606-5388-00173703a0c6\"\n      },\n      \"schedule_id\": \"a4c4f291-92c0-ac40-31d0-b443af962823\",\n      \"ready_at\": \"1983-09-21T00:36:46.614Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 200\n    },\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"0a632bbb-94e1-97b2-6c7a-3cec58c24f2c\",\n        \"start_timestamp\": \"2005-12-04T00:49:54.428Z\",\n        \"end_timestamp\": \"2000-07-28T10:13:43.161Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"38a13ad5-e271-f775-fc58-66cd62e57d80\"\n      },\n      \"schedule_id\": \"12e30a1f-cbdc-4608-773a-9cb998556284\",\n      \"ready_at\": \"1972-09-28T13:05:46.242Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 300\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Bad Request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cc788a92-0f57-4c0a-969a-6638df6c0ad3",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobs\": [\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"2add1fd0-29e6-f2ec-f1d8-855aa9df6575\",\n        \"start_timestamp\": \"1958-02-20T23:13:30.197Z\",\n        \"end_timestamp\": \"1993-06-10T11:24:49.692Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"cb696b79-d533-b606-5388-00173703a0c6\"\n      },\n      \"schedule_id\": \"a4c4f291-92c0-ac40-31d0-b443af962823\",\n      \"ready_at\": \"1983-09-21T00:36:46.614Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 200\n    },\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"0a632bbb-94e1-97b2-6c7a-3cec58c24f2c\",\n        \"start_timestamp\": \"2005-12-04T00:49:54.428Z\",\n        \"end_timestamp\": \"2000-07-28T10:13:43.161Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"38a13ad5-e271-f775-fc58-66cd62e57d80\"\n      },\n      \"schedule_id\": \"12e30a1f-cbdc-4608-773a-9cb998556284\",\n      \"ready_at\": \"1972-09-28T13:05:46.242Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 300\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c9a9895d-95a7-4401-a79b-19b7c97f25f1",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobs\": [\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"2add1fd0-29e6-f2ec-f1d8-855aa9df6575\",\n        \"start_timestamp\": \"1958-02-20T23:13:30.197Z\",\n        \"end_timestamp\": \"1993-06-10T11:24:49.692Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"cb696b79-d533-b606-5388-00173703a0c6\"\n      },\n      \"schedule_id\": \"a4c4f291-92c0-ac40-31d0-b443af962823\",\n      \"ready_at\": \"1983-09-21T00:36:46.614Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 200\n    },\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"0a632bbb-94e1-97b2-6c7a-3cec58c24f2c\",\n        \"start_timestamp\": \"2005-12-04T00:49:54.428Z\",\n        \"end_timestamp\": \"2000-07-28T10:13:43.161Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"38a13ad5-e271-f775-fc58-66cd62e57d80\"\n      },\n      \"schedule_id\": \"12e30a1f-cbdc-4608-773a-9cb998556284\",\n      \"ready_at\": \"1972-09-28T13:05:46.242Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 300\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd06f9fc-73b2-485d-a7ff-593dc4970d8e",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "projects",
+                    ":project_id",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "project_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobs\": [\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"2add1fd0-29e6-f2ec-f1d8-855aa9df6575\",\n        \"start_timestamp\": \"1958-02-20T23:13:30.197Z\",\n        \"end_timestamp\": \"1993-06-10T11:24:49.692Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"cb696b79-d533-b606-5388-00173703a0c6\"\n      },\n      \"schedule_id\": \"a4c4f291-92c0-ac40-31d0-b443af962823\",\n      \"ready_at\": \"1983-09-21T00:36:46.614Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 200\n    },\n    {\n      \"kind\": \"discover_agents\",\n      \"job_spec\": {\n        \"scope_model_id\": \"0a632bbb-94e1-97b2-6c7a-3cec58c24f2c\",\n        \"start_timestamp\": \"2005-12-04T00:49:54.428Z\",\n        \"end_timestamp\": \"2000-07-28T10:13:43.161Z\",\n        \"job_type\": \"metrics_calculation\",\n        \"policy_assignment_id\": \"38a13ad5-e271-f775-fc58-66cd62e57d80\"\n      },\n      \"schedule_id\": \"12e30a1f-cbdc-4608-773a-9cb998556284\",\n      \"ready_at\": \"1972-09-28T13:05:46.242Z\",\n      \"nonce\": \"string\",\n      \"job_priority\": 300\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a337eb84-c2de-49b4-98bd-cbdffc61f674",
+          "name": "Dequeue Job",
+          "request": {
+            "name": "Dequeue Job",
+            "description": {
+              "content": "Returns the next available job for processing from the data plane's job queue. Requires data_plane_jobs_dequeue_next permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "data_planes",
+                ":data_plane_id",
+                "jobs",
+                "next"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "data_plane_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"memory_limit_mb\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7cb53d20-a4c9-441a-b332-f807037e23b0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "data_planes",
+                    ":data_plane_id",
+                    "jobs",
+                    "next"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "data_plane_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"memory_limit_mb\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"6dc7c313-efa0-3724-5328-0be85d9e4e54\",\n  \"job_id\": \"7a8434fc-f48f-5225-ccc0-9b39ab072dc9\",\n  \"state\": \"cancelled\",\n  \"job_attempt\": 7876,\n  \"start_timestamp\": \"2007-06-03T13:37:59.614Z\",\n  \"end_timestamp\": \"1948-12-28T21:32:10.765Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a12860a-ee21-434f-9e1d-26048d41b84b",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "data_planes",
+                    ":data_plane_id",
+                    "jobs",
+                    "next"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "data_plane_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"memory_limit_mb\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ce9e274c-6789-4f7d-872b-58641d151f42",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "data_planes",
+                    ":data_plane_id",
+                    "jobs",
+                    "next"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "data_plane_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"memory_limit_mb\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44f8bdd0-7b1e-4350-87fa-15cf5bcfd4d5",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "data_planes",
+                    ":data_plane_id",
+                    "jobs",
+                    "next"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "data_plane_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"memory_limit_mb\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08e4848b-01fd-4bea-81b3-e545dbac56a7",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "data_planes",
+                    ":data_plane_id",
+                    "jobs",
+                    "next"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "data_plane_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"memory_limit_mb\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "dea4ff9a-8772-466e-ad4d-6661cfdbf188",
+    "name": "Arthur Scope Agents V1 Jobs V1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

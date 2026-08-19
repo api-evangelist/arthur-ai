@@ -1,0 +1,2380 @@
+{
+  "item": [
+    {
+      "id": "50bbffbc-084d-4625-9bc7-b6ea34f14c8f",
+      "name": "Custom Aggregations V1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4b9a7534-8f4d-4215-a0d0-564e0215a4fe",
+          "name": "Post Custom Aggregation.",
+          "request": {
+            "name": "Post Custom Aggregation.",
+            "description": {
+              "content": "Requires workspace_create_custom_aggregation permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "workspaces",
+                ":workspace_id",
+                "custom_aggregations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "workspace_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"value_column\": \"<string>\",\n      \"timestamp_column\": \"<string>\",\n      \"metric_kind\": \"<string>\",\n      \"dimension_columns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"metric_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"value_column\": \"<string>\",\n      \"timestamp_column\": \"<string>\",\n      \"metric_kind\": \"<string>\",\n      \"dimension_columns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"<string>\",\n      \"friendly_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"<string>\"\n    },\n    {\n      \"parameter_key\": \"<string>\",\n      \"friendly_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"<string>\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3cb6f4f-a4c8-4817-8c56-d49a8f069098",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"a7747243-fafb-7392-344d-4c6bee5da18c\",\n  \"name\": \"string\",\n  \"workspace_id\": \"52ec4087-a0f5-5b6f-c478-dc06ce83a88b\",\n  \"versions\": [\n    {\n      \"custom_aggregation_id\": \"0185080f-84fc-179a-aa86-0dabc6fd282a\",\n      \"version\": 3957,\n      \"authored_by\": {\n        \"created_at\": \"2000-10-28T01:03:36.635Z\",\n        \"updated_at\": \"1957-01-11T00:13:00.313Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"service_account\",\n        \"organization_name\": \"string\",\n        \"email\": \"UmVECw5@udeLbRErGIGWlYeNUJYuGUncSCb.bmd\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"1b0cb67f-8f0b-bd01-2d47-bc44f2fd77e9\",\n        \"client_id\": \"string\"\n      },\n      \"created_at\": \"1996-05-19T04:41:02.525Z\",\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\",\n          \"value_column\": \"string\",\n          \"timestamp_column\": \"string\",\n          \"metric_kind\": \"sketch\",\n          \"dimension_columns\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"sql\": \"string\"\n    },\n    {\n      \"custom_aggregation_id\": \"4026db93-cbdb-b625-e1ad-d3fcaaff6875\",\n      \"version\": 5735,\n      \"authored_by\": {\n        \"created_at\": \"1950-03-30T15:17:38.598Z\",\n        \"updated_at\": \"1949-02-06T11:02:18.372Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"user\",\n        \"organization_name\": \"string\",\n        \"email\": \"MpgNu3vjhoPJ57p@DTEGBuHcJQZDxBCjRJqyRqlAm.hpvp\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"bdd7dea9-5f9c-7555-8467-fc056adbc89a\",\n        \"client_id\": \"string\"\n      },\n      \"created_at\": \"2021-09-16T12:59:07.239Z\",\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\",\n          \"value_column\": \"string\",\n          \"timestamp_column\": \"string\",\n          \"metric_kind\": \"sketch\",\n          \"dimension_columns\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"sql\": \"string\"\n    }\n  ],\n  \"latest_version\": 2521,\n  \"description\": \"string\",\n  \"deleted_at\": \"1950-07-20T11:07:07.623Z\",\n  \"is_deleted\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "781ec4f7-099f-4512-9c4e-96743997f104",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Bad Request\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7df90109-921c-46f2-a730-e1dee8934a28",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8da288f8-2117-4446-8ebc-70cc81673693",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5c69591-c1c7-40f8-bd58-eba7b0c23e87",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be9250ca-6c0f-4927-9483-939ff2b25e1d",
+          "name": "Get Custom Aggregation.",
+          "request": {
+            "name": "Get Custom Aggregation.",
+            "description": {
+              "content": "Requires workspace_list_custom_aggregations permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "workspaces",
+                ":workspace_id",
+                "custom_aggregations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "The page number to fetch."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "10",
+                  "description": "The number of items per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search for custom aggregations by aggregation name or description."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "workspace_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "545ac178-06c7-45aa-a085-07ccde69e05f",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"id\": \"11e2229d-1386-06bc-67e9-9258dcb3c947\",\n      \"name\": \"string\",\n      \"workspace_id\": \"4443aee6-c655-2bb6-bab9-b2efa3cc10c2\",\n      \"versions\": [\n        {\n          \"custom_aggregation_id\": \"2b343677-5fb8-3ed1-9dfa-e1e251ee80d7\",\n          \"version\": 6269,\n          \"authored_by\": {\n            \"created_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"updated_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"first_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"last_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"user_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"picture\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"data_plane_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"client_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_at\": \"1971-04-28T08:10:59.827Z\",\n          \"reported_aggregations\": [\n            {\n              \"metric_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value_column\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"timestamp_column\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"metric_kind\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"dimension_columns\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aggregate_args\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"sql\": \"string\"\n        },\n        {\n          \"custom_aggregation_id\": \"0d3a9a60-78a9-e979-0b8b-3b11960cf5e0\",\n          \"version\": 313,\n          \"authored_by\": {\n            \"created_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"updated_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"first_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"last_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"user_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"picture\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"data_plane_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"client_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_at\": \"1993-06-25T18:48:54.285Z\",\n          \"reported_aggregations\": [\n            {\n              \"metric_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value_column\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"timestamp_column\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"metric_kind\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"dimension_columns\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aggregate_args\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"sql\": \"string\"\n        }\n      ],\n      \"latest_version\": 6905,\n      \"description\": \"string\",\n      \"deleted_at\": \"1960-02-05T04:24:55.286Z\",\n      \"is_deleted\": false\n    },\n    {\n      \"id\": \"22762332-d9e4-466b-9bca-7d5de1dd5465\",\n      \"name\": \"string\",\n      \"workspace_id\": \"f14de604-e95e-8ddd-a33c-4f33efe91056\",\n      \"versions\": [\n        {\n          \"custom_aggregation_id\": \"06525bea-eca7-3619-207f-13d1fd237aea\",\n          \"version\": 2755,\n          \"authored_by\": {\n            \"created_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"updated_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"first_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"last_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"user_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"picture\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"data_plane_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"client_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_at\": \"1991-12-18T17:31:47.650Z\",\n          \"reported_aggregations\": [\n            {\n              \"metric_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value_column\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"timestamp_column\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"metric_kind\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"dimension_columns\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aggregate_args\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"sql\": \"string\"\n        },\n        {\n          \"custom_aggregation_id\": \"cac3e468-5664-9b59-17e9-9e825eecedb4\",\n          \"version\": 3489,\n          \"authored_by\": {\n            \"created_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"updated_at\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"first_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"last_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"user_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"organization_name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"picture\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"data_plane_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"client_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"created_at\": \"1990-04-09T04:33:22.934Z\",\n          \"reported_aggregations\": [\n            {\n              \"metric_name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value_column\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"timestamp_column\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"metric_kind\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"dimension_columns\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aggregate_args\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"sql\": \"string\"\n        }\n      ],\n      \"latest_version\": 2287,\n      \"description\": \"string\",\n      \"deleted_at\": \"2026-02-21T12:11:31.360Z\",\n      \"is_deleted\": false\n    }\n  ],\n  \"pagination\": {\n    \"total_pages\": 3281,\n    \"total_records\": 360,\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6cb7f4db-f407-406b-98e6-3c841d4b1da4",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d9137b5c-86a5-415d-af52-a8e33bde9644",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce8cc207-399a-423b-8906-af06702d0acb",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "custom_aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "10"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1997c6d-52f0-46fc-b200-7ac9fe1022d7",
+          "name": "Validate A Custom Aggregation Before Creation.",
+          "request": {
+            "name": "Validate A Custom Aggregation Before Creation.",
+            "description": {
+              "content": "Validates the custom aggregation and returns any expected errors for aggregation creation. Requires workspace_validate_custom_aggregation permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "workspaces",
+                ":workspace_id",
+                "validate_custom_aggregation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "workspace_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"value_column\": \"<string>\",\n      \"timestamp_column\": \"<string>\",\n      \"metric_kind\": \"<string>\",\n      \"dimension_columns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"metric_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"value_column\": \"<string>\",\n      \"timestamp_column\": \"<string>\",\n      \"metric_kind\": \"<string>\",\n      \"dimension_columns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"<string>\",\n      \"friendly_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"<string>\"\n    },\n    {\n      \"parameter_key\": \"<string>\",\n      \"friendly_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"<string>\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d5654915-eb20-4d55-98b6-adf892d320cc",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "validate_custom_aggregation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"validation_results\": [\n    {\n      \"validation_description\": \"string\",\n      \"validation_outcome\": \"pass\"\n    },\n    {\n      \"validation_description\": \"string\",\n      \"validation_outcome\": \"pass\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8044fbbc-7501-4c29-9065-309dbe3fa3de",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "validate_custom_aggregation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19eec73f-9396-400a-8594-e13514f9a549",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "validate_custom_aggregation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae2f525e-2af3-434a-8d34-d1d1c4ff8b21",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "workspaces",
+                    ":workspace_id",
+                    "validate_custom_aggregation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "workspace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"arthur_shield\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"binary_classification\"\n    }\n  ],\n  \"sql\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58fac25f-fdba-417e-a37a-346036e1f8ae",
+          "name": "Update Custom Aggregation By Id.",
+          "request": {
+            "name": "Update Custom Aggregation By Id.",
+            "description": {
+              "content": "Creates a new version of the custom aggregation. Requires custom_aggregation_put permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "custom_aggregations",
+                ":custom_aggregation_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "custom_aggregation_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"value_column\": \"<string>\",\n      \"timestamp_column\": \"<string>\",\n      \"metric_kind\": \"<string>\",\n      \"dimension_columns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"metric_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"value_column\": \"<string>\",\n      \"timestamp_column\": \"<string>\",\n      \"metric_kind\": \"<string>\",\n      \"dimension_columns\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"<string>\",\n      \"friendly_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"<string>\"\n    },\n    {\n      \"parameter_key\": \"<string>\",\n      \"friendly_name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"<string>\"\n    }\n  ],\n  \"sql\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "527915fd-fdf6-4387-aa4d-0aca73fc5011",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"sketch\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"regression\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"agentic_trace\"\n    }\n  ],\n  \"sql\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"a7747243-fafb-7392-344d-4c6bee5da18c\",\n  \"name\": \"string\",\n  \"workspace_id\": \"52ec4087-a0f5-5b6f-c478-dc06ce83a88b\",\n  \"versions\": [\n    {\n      \"custom_aggregation_id\": \"0185080f-84fc-179a-aa86-0dabc6fd282a\",\n      \"version\": 3957,\n      \"authored_by\": {\n        \"created_at\": \"2000-10-28T01:03:36.635Z\",\n        \"updated_at\": \"1957-01-11T00:13:00.313Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"service_account\",\n        \"organization_name\": \"string\",\n        \"email\": \"UmVECw5@udeLbRErGIGWlYeNUJYuGUncSCb.bmd\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"1b0cb67f-8f0b-bd01-2d47-bc44f2fd77e9\",\n        \"client_id\": \"string\"\n      },\n      \"created_at\": \"1996-05-19T04:41:02.525Z\",\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\",\n          \"value_column\": \"string\",\n          \"timestamp_column\": \"string\",\n          \"metric_kind\": \"sketch\",\n          \"dimension_columns\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"sql\": \"string\"\n    },\n    {\n      \"custom_aggregation_id\": \"4026db93-cbdb-b625-e1ad-d3fcaaff6875\",\n      \"version\": 5735,\n      \"authored_by\": {\n        \"created_at\": \"1950-03-30T15:17:38.598Z\",\n        \"updated_at\": \"1949-02-06T11:02:18.372Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"user\",\n        \"organization_name\": \"string\",\n        \"email\": \"MpgNu3vjhoPJ57p@DTEGBuHcJQZDxBCjRJqyRqlAm.hpvp\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"bdd7dea9-5f9c-7555-8467-fc056adbc89a\",\n        \"client_id\": \"string\"\n      },\n      \"created_at\": \"2021-09-16T12:59:07.239Z\",\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\",\n          \"value_column\": \"string\",\n          \"timestamp_column\": \"string\",\n          \"metric_kind\": \"sketch\",\n          \"dimension_columns\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"sql\": \"string\"\n    }\n  ],\n  \"latest_version\": 2521,\n  \"description\": \"string\",\n  \"deleted_at\": \"1950-07-20T11:07:07.623Z\",\n  \"is_deleted\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "af3e47c5-f0f6-40e6-a1c8-a0c7e9f27054",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"sketch\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"regression\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"agentic_trace\"\n    }\n  ],\n  \"sql\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "543ff1aa-65eb-4e0d-8dfb-b1b0f36c347c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"sketch\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"regression\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"agentic_trace\"\n    }\n  ],\n  \"sql\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a31eadc-53bc-4e61-9f76-bb437ffc85eb",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reported_aggregations\": [\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"sketch\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"metric_name\": \"string\",\n      \"description\": \"string\",\n      \"value_column\": \"string\",\n      \"timestamp_column\": \"string\",\n      \"metric_kind\": \"numeric\",\n      \"dimension_columns\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"aggregate_args\": [\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"regression\"\n    },\n    {\n      \"parameter_key\": \"string\",\n      \"friendly_name\": \"string\",\n      \"description\": \"string\",\n      \"parameter_type\": \"dataset\",\n      \"model_problem_type\": \"agentic_trace\"\n    }\n  ],\n  \"sql\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d505a65-8829-482b-b073-884e8e12ef8d",
+          "name": "Delete Custom Aggregation.",
+          "request": {
+            "name": "Delete Custom Aggregation.",
+            "description": {
+              "content": "Requires custom_aggregation_delete permission. Aggregation will no longer be available to execute but will still be available to read.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "custom_aggregations",
+                ":custom_aggregation_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "custom_aggregation_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0fe91603-0b8a-44a9-b6f6-e839d6251974",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "382e0810-b267-4381-b85e-665466aff4de",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c92ced1e-439e-4342-8739-4f774cb5ea5a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ba16f61-3f7b-4f0a-aafd-fc7e45a788a0",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0cc46fad-78cb-440a-b4a9-e90511ef9d09",
+          "name": "Get Custom Aggregation By Id.",
+          "request": {
+            "name": "Get Custom Aggregation By Id.",
+            "description": {
+              "content": "Requires custom_aggregation_read permission. Includes version filters to specify the versions included on the returned aggregation.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "custom_aggregations",
+                ":custom_aggregation_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<integer>",
+                  "description": "The version of the custom aggregation to fetch."
+                },
+                {
+                  "disabled": false,
+                  "key": "latest",
+                  "value": "false",
+                  "description": "Whether to fetch the latest version of the custom aggregation."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "custom_aggregation_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6257b8e9-aff7-4201-9c43-1542f54ca9db",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "latest",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"a7747243-fafb-7392-344d-4c6bee5da18c\",\n  \"name\": \"string\",\n  \"workspace_id\": \"52ec4087-a0f5-5b6f-c478-dc06ce83a88b\",\n  \"versions\": [\n    {\n      \"custom_aggregation_id\": \"0185080f-84fc-179a-aa86-0dabc6fd282a\",\n      \"version\": 3957,\n      \"authored_by\": {\n        \"created_at\": \"2000-10-28T01:03:36.635Z\",\n        \"updated_at\": \"1957-01-11T00:13:00.313Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"service_account\",\n        \"organization_name\": \"string\",\n        \"email\": \"UmVECw5@udeLbRErGIGWlYeNUJYuGUncSCb.bmd\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"1b0cb67f-8f0b-bd01-2d47-bc44f2fd77e9\",\n        \"client_id\": \"string\"\n      },\n      \"created_at\": \"1996-05-19T04:41:02.525Z\",\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\",\n          \"value_column\": \"string\",\n          \"timestamp_column\": \"string\",\n          \"metric_kind\": \"sketch\",\n          \"dimension_columns\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"sql\": \"string\"\n    },\n    {\n      \"custom_aggregation_id\": \"4026db93-cbdb-b625-e1ad-d3fcaaff6875\",\n      \"version\": 5735,\n      \"authored_by\": {\n        \"created_at\": \"1950-03-30T15:17:38.598Z\",\n        \"updated_at\": \"1949-02-06T11:02:18.372Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"user\",\n        \"organization_name\": \"string\",\n        \"email\": \"MpgNu3vjhoPJ57p@DTEGBuHcJQZDxBCjRJqyRqlAm.hpvp\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"bdd7dea9-5f9c-7555-8467-fc056adbc89a\",\n        \"client_id\": \"string\"\n      },\n      \"created_at\": \"2021-09-16T12:59:07.239Z\",\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\",\n          \"value_column\": \"string\",\n          \"timestamp_column\": \"string\",\n          \"metric_kind\": \"sketch\",\n          \"dimension_columns\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"sql\": \"string\"\n    }\n  ],\n  \"latest_version\": 2521,\n  \"description\": \"string\",\n  \"deleted_at\": \"1950-07-20T11:07:07.623Z\",\n  \"is_deleted\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8f95eba-0e60-4ceb-b3f9-be120cccf77b",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "latest",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "79d2da6f-be21-4830-89f6-80dcd0f03dd3",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "latest",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "08b023fe-2cd2-48b3-a51c-0e9074b60249",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "version",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "latest",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c63ff38a-c799-499e-a82a-97f6ec6c1127",
+          "name": "Patch Custom Aggregation",
+          "request": {
+            "name": "Patch Custom Aggregation",
+            "description": {
+              "content": "Requires custom_aggregation_update permission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "custom_aggregations",
+                ":custom_aggregation_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "custom_aggregation_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17a0b40c-5862-4560-a69d-55cf256637b0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"a7747243-fafb-7392-344d-4c6bee5da18c\",\n  \"name\": \"string\",\n  \"workspace_id\": \"52ec4087-a0f5-5b6f-c478-dc06ce83a88b\",\n  \"versions\": [\n    {\n      \"custom_aggregation_id\": \"0185080f-84fc-179a-aa86-0dabc6fd282a\",\n      \"version\": 3957,\n      \"authored_by\": {\n        \"created_at\": \"2000-10-28T01:03:36.635Z\",\n        \"updated_at\": \"1957-01-11T00:13:00.313Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"service_account\",\n        \"organization_name\": \"string\",\n        \"email\": \"UmVECw5@udeLbRErGIGWlYeNUJYuGUncSCb.bmd\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"1b0cb67f-8f0b-bd01-2d47-bc44f2fd77e9\",\n        \"client_id\": \"string\"\n      },\n      \"created_at\": \"1996-05-19T04:41:02.525Z\",\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\",\n          \"value_column\": \"string\",\n          \"timestamp_column\": \"string\",\n          \"metric_kind\": \"sketch\",\n          \"dimension_columns\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"sql\": \"string\"\n    },\n    {\n      \"custom_aggregation_id\": \"4026db93-cbdb-b625-e1ad-d3fcaaff6875\",\n      \"version\": 5735,\n      \"authored_by\": {\n        \"created_at\": \"1950-03-30T15:17:38.598Z\",\n        \"updated_at\": \"1949-02-06T11:02:18.372Z\",\n        \"organization_id\": \"string\",\n        \"id\": \"string\",\n        \"first_name\": \"string\",\n        \"last_name\": \"string\",\n        \"user_type\": \"user\",\n        \"organization_name\": \"string\",\n        \"email\": \"MpgNu3vjhoPJ57p@DTEGBuHcJQZDxBCjRJqyRqlAm.hpvp\",\n        \"picture\": \"string\",\n        \"data_plane_id\": \"bdd7dea9-5f9c-7555-8467-fc056adbc89a\",\n        \"client_id\": \"string\"\n      },\n      \"created_at\": \"2021-09-16T12:59:07.239Z\",\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\",\n          \"value_column\": \"string\",\n          \"timestamp_column\": \"string\",\n          \"metric_kind\": \"sketch\",\n          \"dimension_columns\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      ],\n      \"sql\": \"string\"\n    }\n  ],\n  \"latest_version\": 2521,\n  \"description\": \"string\",\n  \"deleted_at\": \"1950-07-20T11:07:07.623Z\",\n  \"is_deleted\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55c9bc51-7eab-458e-b3b3-e9ed4f3b1046",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Resource not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e0189a27-39ce-4cec-8ba2-bf6d00ed7a82",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\",\n      \"input\": {},\n      \"ctx\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c8d7a82a-15ca-4c7c-9a07-271eeac1ea06",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "custom_aggregations",
+                    ":custom_aggregation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "custom_aggregation_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b8427753-933b-4ac3-b1dc-35f9f2b909d7",
+    "name": "Arthur Scope Agents V1 Custom Aggregations V1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

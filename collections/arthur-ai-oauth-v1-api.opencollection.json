@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Arthur Scope Agents V1 OAuth V1 API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OAuth V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Openid Configuration Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/auth/oidc/.well-known/openid-configuration"
+          },
+          "docs": "Returns well-known openid configuration for Arthur auth server"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,182 @@
+{
+  "item": [
+    {
+      "id": "2875e407-5110-42a0-b84c-42207776b1a9",
+      "name": "Metric Functions V1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "532b57d7-2356-4189-b677-40ed7ea27d88",
+          "name": "Get Aggregations Catalog",
+          "request": {
+            "name": "Get Aggregations Catalog",
+            "description": {
+              "content": "Get aggregations catalog.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "metric_functions",
+                "aggregations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "redirect_uri",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9d53787f-b2b2-4ac2-8739-096f16fc8bd0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "metric_functions",
+                    "aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"records\": [\n    {\n      \"name\": \"string\",\n      \"id\": \"1fae8c0d-c3e7-0f78-aad0-e1888672b352\",\n      \"description\": \"string\",\n      \"metric_type\": \"numeric\",\n      \"init_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"optional\": false\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"optional\": false\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"optional\": false\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"optional\": false\n        }\n      ],\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\"\n        }\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"id\": \"90310066-c2b2-94b9-62ee-8567180d704c\",\n      \"description\": \"string\",\n      \"metric_type\": \"sketch\",\n      \"init_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"optional\": false\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"optional\": false\n        }\n      ],\n      \"aggregate_args\": [\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"optional\": false\n        },\n        {\n          \"parameter_key\": \"string\",\n          \"friendly_name\": \"string\",\n          \"description\": \"string\",\n          \"parameter_type\": \"dataset\",\n          \"model_problem_type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"optional\": false\n        }\n      ],\n      \"reported_aggregations\": [\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"metric_name\": \"string\",\n          \"description\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"pagination\": {\n    \"total_pages\": 3425,\n    \"total_records\": 2957,\n    \"page\": 1,\n    \"page_size\": 20\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "384cf9ae-7f1b-4281-b2d3-c9936ee15432",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "metric_functions",
+                    "aggregations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": \"Internal server error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f9fa8ce5-677d-4ecf-8d47-788221c33f56",
+    "name": "Arthur Scope Agents V1 Metric Functions V1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

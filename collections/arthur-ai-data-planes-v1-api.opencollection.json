@@ -1,0 +1,251 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Arthur Scope Agents V1 Data Planes V1 API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Planes V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Data Planes.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/workspaces/:workspace_id/data_planes",
+            "params": [
+              {
+                "name": "workspace_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Override the field used for sorting the returned list. Optional."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Override the sort order used. Optional."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Search term to filter workspaces by name."
+              },
+              {
+                "name": "gen_ai_enabled",
+                "value": "",
+                "type": "query",
+                "description": "Filter to only return engines enabled with the GenAI capability"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page to return starting from 1 up to total_pages."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The number of records per page. The max is 1000."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth",
+              "accessTokenUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Requires workspace_list_data_planes permission."
+        },
+        {
+          "info": {
+            "name": "Post Data Plane.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/workspaces/:workspace_id/data_planes",
+            "params": [
+              {
+                "name": "workspace_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth",
+              "accessTokenUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Requires workspace_create_data_plane permission."
+        },
+        {
+          "info": {
+            "name": "Get Data Plane By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/data_planes/:data_plane_id",
+            "params": [
+              {
+                "name": "data_plane_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth",
+              "accessTokenUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns a single data plane by ID. Requires data_plane_read permission."
+        },
+        {
+          "info": {
+            "name": "Update Data Plane",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/v1/data_planes/:data_plane_id",
+            "params": [
+              {
+                "name": "data_plane_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth",
+              "accessTokenUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Updates a single data plane. Requires data_plane_update permission."
+        },
+        {
+          "info": {
+            "name": "Delete Data Plane By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/data_planes/:data_plane_id",
+            "params": [
+              {
+                "name": "data_plane_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth",
+              "accessTokenUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Deletes a single data plane. Requires data_plane_delete permission."
+        },
+        {
+          "info": {
+            "name": "Get Supported Infrastructure Values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/data_planes/infrastructures",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth",
+              "accessTokenUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns all supported infrastructure values for engines."
+        },
+        {
+          "info": {
+            "name": "Regenerate Data Plane Credential Set.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/data_planes/:data_plane_id/credential_set",
+            "params": [
+              {
+                "name": "data_plane_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/auth",
+              "accessTokenUrl": "https://platform-auth.arthur.ai/realms/arthur/protocol/openid-connect/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Requires data_plane_regenerate_creds permission."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
