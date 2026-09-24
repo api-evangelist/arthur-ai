@@ -1,7 +1,10 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Arthur Scope Agents V1 Upsolve V1 API
   version: 0.1.0
+servers:
+- url: https://platform.arthur.ai/api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Upsolve V1
 paths:
@@ -47,48 +50,6 @@ paths:
       - OAuth2AuthorizationCode: []
 components:
   schemas:
-    ValidationError:
-      properties:
-        loc:
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-          type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
-        input:
-          title: Input
-        ctx:
-          type: object
-          title: Context
-      type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
-    NotFoundError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Resource not found
-      type: object
-      title: NotFoundError
-    InternalServerError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Internal server error
-      type: object
-      title: InternalServerError
     ResourceKind:
       type: string
       enum:
@@ -116,16 +77,41 @@ components:
       - policy_attestation_rule
       - policy_assignment
       title: ResourceKind
-    UpsolveToken:
+    ValidationError:
       properties:
-        token:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
           type: string
-          title: Token
-          description: JWT for use with Upsolve API.
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
       type: object
       required:
-      - token
-      title: UpsolveToken
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
     PostUpsolveTenant:
       properties:
         resource_kind:
@@ -141,15 +127,32 @@ components:
       - resource_kind
       - resource_id
       title: PostUpsolveTenant
-    HTTPValidationError:
+    InternalServerError:
       properties:
         detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
+          type: string
           title: Detail
+          default: Internal server error
       type: object
-      title: HTTPValidationError
+      title: InternalServerError
+    NotFoundError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Resource not found
+      type: object
+      title: NotFoundError
+    UpsolveToken:
+      properties:
+        token:
+          type: string
+          title: Token
+          description: JWT for use with Upsolve API.
+      type: object
+      required:
+      - token
+      title: UpsolveToken
   securitySchemes:
     OAuth2AuthorizationCode:
       type: oauth2

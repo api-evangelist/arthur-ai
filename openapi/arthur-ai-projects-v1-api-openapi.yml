@@ -1,7 +1,10 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Arthur Scope Agents V1 Projects V1 API
   version: 0.1.0
+servers:
+- url: https://platform.arthur.ai/api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Projects V1
 paths:
@@ -284,45 +287,6 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    ResourceList_Project_:
-      properties:
-        records:
-          items:
-            $ref: '#/components/schemas/Project'
-          type: array
-          title: Records
-          description: List of records.
-        pagination:
-          $ref: '#/components/schemas/Pagination'
-          description: Pagination information.
-      type: object
-      required:
-      - records
-      - pagination
-      title: ResourceList[Project]
-    ProjectSort:
-      type: string
-      enum:
-      - name
-      - created_at
-      - updated_at
-      title: ProjectSort
-    PatchProject:
-      properties:
-        name:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Name
-          description: Name of the project.
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-          description: Description of the project.
-      type: object
-      title: PatchProject
     ValidationError:
       properties:
         loc:
@@ -349,14 +313,46 @@ components:
       - msg
       - type
       title: ValidationError
-    NotFoundError:
+    PatchProject:
+      properties:
+        name:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Name
+          description: Name of the project.
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+          description: Description of the project.
+      type: object
+      title: PatchProject
+    ProjectSort:
+      type: string
+      enum:
+      - name
+      - created_at
+      - updated_at
+      title: ProjectSort
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    BadRequestError:
       properties:
         detail:
           type: string
           title: Detail
-          default: Resource not found
+          default: Bad Request
       type: object
-      title: NotFoundError
+      title: BadRequestError
     InternalServerError:
       properties:
         detail:
@@ -365,6 +361,71 @@ components:
           default: Internal server error
       type: object
       title: InternalServerError
+    PostProject:
+      properties:
+        name:
+          type: string
+          title: Name
+          description: Name of the project.
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+          description: Description of the project.
+      type: object
+      required:
+      - name
+      title: PostProject
+    NotFoundError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Resource not found
+      type: object
+      title: NotFoundError
+    Pagination:
+      properties:
+        page:
+          type: integer
+          title: Page
+          description: The current page number. Page 1 is the first page.
+          default: 1
+        page_size:
+          type: integer
+          title: Page Size
+          description: Number of records per page.
+          default: 20
+        total_pages:
+          type: integer
+          title: Total Pages
+          description: Total number of pages.
+        total_records:
+          type: integer
+          title: Total Records
+          description: Total number of records across all pages.
+      type: object
+      required:
+      - total_pages
+      - total_records
+      title: Pagination
+    ResourceList_Project_:
+      properties:
+        records:
+          items:
+            $ref: '#/components/schemas/Project'
+          type: array
+          title: Records
+          description: List of records.
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+          description: Pagination information.
+      type: object
+      required:
+      - records
+      - pagination
+      title: ResourceList[Project]
     Project:
       properties:
         created_at:
@@ -416,64 +477,6 @@ components:
       - asc
       - desc
       title: SortOrder
-    Pagination:
-      properties:
-        page:
-          type: integer
-          title: Page
-          description: The current page number. Page 1 is the first page.
-          default: 1
-        page_size:
-          type: integer
-          title: Page Size
-          description: Number of records per page.
-          default: 20
-        total_pages:
-          type: integer
-          title: Total Pages
-          description: Total number of pages.
-        total_records:
-          type: integer
-          title: Total Records
-          description: Total number of records across all pages.
-      type: object
-      required:
-      - total_pages
-      - total_records
-      title: Pagination
-    PostProject:
-      properties:
-        name:
-          type: string
-          title: Name
-          description: Name of the project.
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-          description: Description of the project.
-      type: object
-      required:
-      - name
-      title: PostProject
-    BadRequestError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Bad Request
-      type: object
-      title: BadRequestError
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
   securitySchemes:
     OAuth2AuthorizationCode:
       type: oauth2

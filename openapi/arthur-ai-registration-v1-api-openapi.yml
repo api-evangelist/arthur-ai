@@ -1,7 +1,10 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Arthur Scope Agents V1 Registration V1 API
   version: 0.1.0
+servers:
+- url: https://platform.arthur.ai/api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Registration V1
 paths:
@@ -44,23 +47,6 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    RegisterUser:
-      properties:
-        email:
-          type: string
-          format: email
-          title: Email
-          description: The user's email.
-        recaptcha_token:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Recaptcha Token
-          description: reCAPTCHA Enterprise token obtained client-side. Required when reCAPTCHA is configured server-side; ignored otherwise.
-      type: object
-      required:
-      - email
-      title: RegisterUser
     ValidationError:
       properties:
         loc:
@@ -87,22 +73,6 @@ components:
       - msg
       - type
       title: ValidationError
-    InternalServerError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Internal server error
-      type: object
-      title: InternalServerError
-    BadRequestError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Bad Request
-      type: object
-      title: BadRequestError
     HTTPValidationError:
       properties:
         detail:
@@ -112,6 +82,39 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
+    BadRequestError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Bad Request
+      type: object
+      title: BadRequestError
+    InternalServerError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Internal server error
+      type: object
+      title: InternalServerError
+    RegisterUser:
+      properties:
+        email:
+          type: string
+          format: email
+          title: Email
+          description: The user's email.
+        recaptcha_token:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Recaptcha Token
+          description: reCAPTCHA Enterprise token obtained client-side. Required when reCAPTCHA is configured server-side; ignored otherwise.
+      type: object
+      required:
+      - email
+      title: RegisterUser
   securitySchemes:
     OAuth2AuthorizationCode:
       type: oauth2

@@ -1,0 +1,130 @@
+slug: arthur-ai
+provider: Arthur AI
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 11
+edges:
+- tag: Authorization V1
+  spec_file: arthur-ai-authorization-v1-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: Post Workspace Role Binding; List Roles; List Permissions; Check Permissions
+  reason: Role bindings, roles, permissions and permission checks across organization, workspaces, projects,
+    users and groups is identity and access management (RBAC/authorization).
+- tag: Agents V1
+  spec_file: arthur-ai-agents-v1-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.8
+  evidence: List Organization Unregistered Agents; List All Registered Agent Llm Models For A Workspace;
+    schemas LLMModelResponse, ToxicityConfig
+  reason: Operations inventory and register AI agents, their LLM models, tools and data sources for governance/observability
+    — AI/ML model lifecycle and responsible AI management, i.e. Artificial Intelligence Management.
+- tag: Models V1
+  spec_file: arthur-ai-models-v1-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.8
+  evidence: POST /api/v1/projects/{project_id}/models  Create Model; PUT /api/v1/models/{model_id}/metric_config  Update
+    Model Metric Configuration By Model Id
+  reason: CRUD over ML model records (ModelProblemType, ModelMetricSpec) plus monitoring schedule configuration
+    — AI/ML model lifecycle and MLOps management.
+- tag: Users V1
+  spec_file: arthur-ai-users-v1-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /api/v1/organization/users/invite-user  post_organization_user_invite  Create User Via
+    Email Invite; POST /api/v1/organization/service_accounts  post_organization_service_account  Create
+    Service Account; POST /api/v1/users/{user_id}/credentials  post_user_creds  Regenerate User Credentials.
+  reason: 'Full lifecycle of platform user accounts and service accounts including invitation, patching,
+    deletion and credential regeneration — joiners/movers/leavers and machine identity, which is Identity
+    & Access Management. Not HR employee records: these are platform principals, not employees.'
+- tag: Webhooks V1
+  spec_file: arthur-ai-webhooks-v1-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.8
+  evidence: POST /api/v1/workspaces/{workspace_id}/webhooks  post_webhook  Post Webhook.; POST /api/v1/workspaces/{workspace_id}/webhooks/test  post_test_webhook  Post
+    Test Webhook.
+  reason: Create/read/patch/delete plus test-delivery of outbound webhook subscriptions scoped to a workspace,
+    with PostWebhook/WebhookResult schemas. This is precisely outbound webhook and event-subscription
+    lifecycle management exposed to platform consumers.
+- tag: Tasks V1
+  spec_file: arthur-ai-tasks-v1-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.78
+  evidence: 'POST /api/v1/projects/{project_id}/tasks  project_create_model_task  Create A Task. ... schemas:
+    ContinuousEvalResponse, Eval, LLMBaseConfigSettings, RegisteredAgentProvider, MetricResponse'
+  reason: '''Task'' here is a monitored/evaluated AI model or agent workload: tasks hang off /models/{model_id},
+    carry LLM config, evals, continuous evaluation and metrics. That is AI/ML model lifecycle and responsible-AI
+    monitoring, i.e. Artificial Intelligence Management, not project or work-item management.'
+- tag: Groups V1
+  spec_file: arthur-ai-groups-v1-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: POST /api/v1/groups/{group_id}/users  assign_users_to_group  Assign User To Group; GET /api/v1/organization/group_memberships  Search
+    Group Memberships
+  reason: Group and group-membership administration for organization users is access-control/identity
+    administration. Could alternatively be read as tenant user lifecycle, hence not top confidence.
+- tag: Roles V1
+  spec_file: arthur-ai-roles-v1-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: 'GET /api/v1/roles/{role_id}  get_role  Get Role. ... schemas: ExtendedRole, PermissionName,
+    ResourceKind, Permission, BaseRole'
+  reason: Roles carrying Permission/PermissionName/ResourceKind describe role-based access control definitions,
+    i.e. access management. Only a single read operation, so confidence is moderate rather than high.
+- tag: Alert Rules V1
+  spec_file: arthur-ai-alert-rules-v1-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /api/v1/models/{model_id}/alert_rules Create Model Alert Rule; Validate A Model Alert
+    Rule Query
+  reason: Alert rules are defined against ML models for monitoring in Arthur's AI governance platform
+    — model monitoring within AI/ML lifecycle management. Some ambiguity with generic observability (BC-4220.20),
+    but the model_id scoping grounds AI management.
+- tag: Alerts V1
+  spec_file: arthur-ai-alerts-v1-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: GET /api/v1/models/{model_id}/alerts Get Model Alerts; Get Workspace Alerts Grouped
+  reason: Alerts here are model-monitoring alerts raised by AI governance rules (not financial-crime or
+    IT service alerts), supporting responsible AI / model monitoring. Moderate confidence given overlap
+    with generic observability.
+- tag: Policies V1
+  spec_file: arthur-ai-policies-v1-api-openapi.yml
+  capability_id: BC-130.20
+  capability_id_l1: BC-130
+  capability_name: Policy Management
+  confidence: 0.7
+  evidence: POST /api/v1/organization/policies  create_policy  Create Policy; POST /api/v1/models/{model_id}/check_compliance  Check
+    Model Compliance; GET /api/v1/models/{model_id}/attestations  List Model Attestations
+  reason: Policy authoring, assignment to models/workspaces/organization, compliance evaluation and attestation
+    rules constitute policy lifecycle and compliance management (here applied to AI governance). Some
+    ambiguity between Policy Management and Regulatory Compliance Management.

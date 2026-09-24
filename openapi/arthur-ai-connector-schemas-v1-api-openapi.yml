@@ -1,7 +1,10 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Arthur Scope Agents V1 Connector Schemas V1 API
   version: 0.1.0
+servers:
+- url: https://platform.arthur.ai/api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Connector Schemas V1
 paths:
@@ -71,67 +74,14 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    ResourceList_ConnectorType_:
-      properties:
-        records:
-          items:
-            $ref: '#/components/schemas/ConnectorType'
-          type: array
-          title: Records
-          description: List of records.
-        pagination:
-          $ref: '#/components/schemas/Pagination'
-          description: Pagination information.
-      type: object
-      required:
-      - records
-      - pagination
-      title: ResourceList[ConnectorType]
-    ConnectorSpecSchema:
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          description: Time of record creation.
-        updated_at:
-          type: string
-          format: date-time
-          title: Updated At
-          description: Time of last record update.
-        connector_type:
-          $ref: '#/components/schemas/ConnectorType'
-          description: Connector type for the schema. Must be unique.
-        fields:
-          items:
-            $ref: '#/components/schemas/ConnectorSpecSchemaField'
-          type: array
-          title: Fields
-          description: Metadata for optional and required connector fields.
-        dataset_locator_schema:
-          $ref: '#/components/schemas/DatasetLocatorSchema'
-          description: Schema with dataset locator metadata for all datasets using the connector type.
-        supports_dataset_listing:
-          type: boolean
-          title: Supports Dataset Listing
-          description: Indicates whether this connector supports listing available datasets.
-      type: object
-      required:
-      - created_at
-      - updated_at
-      - connector_type
-      - fields
-      - dataset_locator_schema
-      - supports_dataset_listing
-      title: ConnectorSpecSchema
-    DatasetLocatorFieldDataType:
+    ConnectorFieldDataType:
       type: string
       enum:
-      - UUID
       - string
+      - dict
       - enum
-      - regex_string
-      title: DatasetLocatorFieldDataType
+      - int
+      title: ConnectorFieldDataType
     ValidationError:
       properties:
         loc:
@@ -158,67 +108,15 @@ components:
       - msg
       - type
       title: ValidationError
-    DatasetLocatorSchema:
+    HTTPValidationError:
       properties:
-        fields:
+        detail:
           items:
-            $ref: '#/components/schemas/DatasetLocatorSchemaField'
+            $ref: '#/components/schemas/ValidationError'
           type: array
-          title: Fields
-          description: Schema for dataset locator fields for all datasets using the connector type.
-      type: object
-      required:
-      - fields
-      title: DatasetLocatorSchema
-    NotFoundError:
-      properties:
-        detail:
-          type: string
           title: Detail
-          default: Resource not found
       type: object
-      title: NotFoundError
-    InternalServerError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Internal server error
-      type: object
-      title: InternalServerError
-    Pagination:
-      properties:
-        page:
-          type: integer
-          title: Page
-          description: The current page number. Page 1 is the first page.
-          default: 1
-        page_size:
-          type: integer
-          title: Page Size
-          description: Number of records per page.
-          default: 20
-        total_pages:
-          type: integer
-          title: Total Pages
-          description: Total number of pages.
-        total_records:
-          type: integer
-          title: Total Records
-          description: Total number of records across all pages.
-      type: object
-      required:
-      - total_pages
-      - total_records
-      title: Pagination
-    ConnectorFieldDataType:
-      type: string
-      enum:
-      - string
-      - dict
-      - enum
-      - int
-      title: ConnectorFieldDataType
+      title: HTTPValidationError
     DatasetLocatorSchemaField:
       properties:
         name:
@@ -251,19 +149,26 @@ components:
       - is_optional
       - description
       title: DatasetLocatorSchemaField
-    ConnectorType:
-      type: string
-      enum:
-      - shield
-      - S3
-      - GCS
-      - BigQuery
-      - engine_internal
-      - odbc
-      - snowflake
-      - databricks
-      - AzureBlob
-      title: ConnectorType
+    DatasetLocatorSchema:
+      properties:
+        fields:
+          items:
+            $ref: '#/components/schemas/DatasetLocatorSchemaField'
+          type: array
+          title: Fields
+          description: Schema for dataset locator fields for all datasets using the connector type.
+      type: object
+      required:
+      - fields
+      title: DatasetLocatorSchema
+    InternalServerError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Internal server error
+      type: object
+      title: InternalServerError
     ConnectorSpecSchemaField:
       properties:
         name:
@@ -301,15 +206,113 @@ components:
       - d_type
       - description
       title: ConnectorSpecSchemaField
-    HTTPValidationError:
+    NotFoundError:
       properties:
         detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
+          type: string
           title: Detail
+          default: Resource not found
       type: object
-      title: HTTPValidationError
+      title: NotFoundError
+    Pagination:
+      properties:
+        page:
+          type: integer
+          title: Page
+          description: The current page number. Page 1 is the first page.
+          default: 1
+        page_size:
+          type: integer
+          title: Page Size
+          description: Number of records per page.
+          default: 20
+        total_pages:
+          type: integer
+          title: Total Pages
+          description: Total number of pages.
+        total_records:
+          type: integer
+          title: Total Records
+          description: Total number of records across all pages.
+      type: object
+      required:
+      - total_pages
+      - total_records
+      title: Pagination
+    DatasetLocatorFieldDataType:
+      type: string
+      enum:
+      - UUID
+      - string
+      - enum
+      - regex_string
+      title: DatasetLocatorFieldDataType
+    ConnectorSpecSchema:
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+          description: Time of record creation.
+        updated_at:
+          type: string
+          format: date-time
+          title: Updated At
+          description: Time of last record update.
+        connector_type:
+          $ref: '#/components/schemas/ConnectorType'
+          description: Connector type for the schema. Must be unique.
+        fields:
+          items:
+            $ref: '#/components/schemas/ConnectorSpecSchemaField'
+          type: array
+          title: Fields
+          description: Metadata for optional and required connector fields.
+        dataset_locator_schema:
+          $ref: '#/components/schemas/DatasetLocatorSchema'
+          description: Schema with dataset locator metadata for all datasets using the connector type.
+        supports_dataset_listing:
+          type: boolean
+          title: Supports Dataset Listing
+          description: Indicates whether this connector supports listing available datasets.
+      type: object
+      required:
+      - created_at
+      - updated_at
+      - connector_type
+      - fields
+      - dataset_locator_schema
+      - supports_dataset_listing
+      title: ConnectorSpecSchema
+    ConnectorType:
+      type: string
+      enum:
+      - shield
+      - S3
+      - GCS
+      - BigQuery
+      - engine_internal
+      - odbc
+      - snowflake
+      - databricks
+      - AzureBlob
+      title: ConnectorType
+    ResourceList_ConnectorType_:
+      properties:
+        records:
+          items:
+            $ref: '#/components/schemas/ConnectorType'
+          type: array
+          title: Records
+          description: List of records.
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+          description: Pagination information.
+      type: object
+      required:
+      - records
+      - pagination
+      title: ResourceList[ConnectorType]
   securitySchemes:
     OAuth2AuthorizationCode:
       type: oauth2

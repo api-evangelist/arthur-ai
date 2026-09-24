@@ -1,7 +1,10 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Arthur Scope Agents V1 Webhooks V1 API
   version: 0.1.0
+servers:
+- url: https://platform.arthur.ai/api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Webhooks V1
 paths:
@@ -339,64 +342,6 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    Webhook:
-      properties:
-        name:
-          type: string
-          title: Name
-          description: Name of webhook.
-        url:
-          type: string
-          title: Url
-          description: URL of the webhook.
-        headers:
-          additionalProperties:
-            items:
-              type: string
-            type: array
-          type: object
-          title: Headers
-          description: List of headers for the webhook.
-          default: {}
-        body:
-          type: string
-          title: Body
-          description: Body of the webhook.
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          description: Time of record creation.
-        updated_at:
-          type: string
-          format: date-time
-          title: Updated At
-          description: Time of last record update.
-        id:
-          type: string
-          format: uuid
-          title: Id
-          description: The id of the webhook.
-        workspace_id:
-          type: string
-          format: uuid
-          title: Workspace Id
-          description: ID of the parent workspace.
-        last_updated_by_user:
-          anyOf:
-          - $ref: '#/components/schemas/User'
-          - type: 'null'
-          description: Information for user who last updated the webhook.
-      type: object
-      required:
-      - name
-      - url
-      - body
-      - created_at
-      - updated_at
-      - id
-      - workspace_id
-      title: Webhook
     ValidationError:
       properties:
         loc:
@@ -430,31 +375,52 @@ components:
       - data_plane
       - service_account
       title: UserType
-    Pagination:
+    HTTPValidationError:
       properties:
-        page:
-          type: integer
-          title: Page
-          description: The current page number. Page 1 is the first page.
-          default: 1
-        page_size:
-          type: integer
-          title: Page Size
-          description: Number of records per page.
-          default: 20
-        total_pages:
-          type: integer
-          title: Total Pages
-          description: Total number of pages.
-        total_records:
-          type: integer
-          title: Total Records
-          description: Total number of records across all pages.
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    PostWebhook:
+      properties:
+        name:
+          type: string
+          title: Name
+          description: Name of webhook.
+        url:
+          type: string
+          title: Url
+          description: URL of the webhook.
+        headers:
+          additionalProperties:
+            items:
+              type: string
+            type: array
+          type: object
+          title: Headers
+          description: List of headers for the webhook.
+          default: {}
+        body:
+          type: string
+          title: Body
+          description: Body of the webhook.
       type: object
       required:
-      - total_pages
-      - total_records
-      title: Pagination
+      - name
+      - url
+      - body
+      title: PostWebhook
+    BadRequestError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Bad Request
+      type: object
+      title: BadRequestError
     WebhookResponse:
       properties:
         status_code:
@@ -472,6 +438,30 @@ components:
       - status_code
       - response
       title: WebhookResponse
+    InternalServerError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Internal server error
+      type: object
+      title: InternalServerError
+    WebhookResult:
+      properties:
+        error:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Error
+        response:
+          anyOf:
+          - $ref: '#/components/schemas/WebhookResponse'
+          - type: 'null'
+      type: object
+      required:
+      - error
+      - response
+      title: WebhookResult
     User:
       properties:
         created_at:
@@ -548,28 +538,31 @@ components:
       - user_type
       - organization_name
       title: User
-    SortOrder:
-      type: string
-      enum:
-      - asc
-      - desc
-      title: SortOrder
-    ResourceList_Webhook_:
+    Pagination:
       properties:
-        records:
-          items:
-            $ref: '#/components/schemas/Webhook'
-          type: array
-          title: Records
-          description: List of records.
-        pagination:
-          $ref: '#/components/schemas/Pagination'
-          description: Pagination information.
+        page:
+          type: integer
+          title: Page
+          description: The current page number. Page 1 is the first page.
+          default: 1
+        page_size:
+          type: integer
+          title: Page Size
+          description: Number of records per page.
+          default: 20
+        total_pages:
+          type: integer
+          title: Total Pages
+          description: Total number of pages.
+        total_records:
+          type: integer
+          title: Total Records
+          description: Total number of records across all pages.
       type: object
       required:
-      - records
-      - pagination
-      title: ResourceList[Webhook]
+      - total_pages
+      - total_records
+      title: Pagination
     PatchWebhook:
       properties:
         name:
@@ -602,30 +595,22 @@ components:
           description: Body of the webhook.
       type: object
       title: PatchWebhook
-    InternalServerError:
+    ResourceList_Webhook_:
       properties:
-        detail:
-          type: string
-          title: Detail
-          default: Internal server error
-      type: object
-      title: InternalServerError
-    WebhookResult:
-      properties:
-        error:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Error
-        response:
-          anyOf:
-          - $ref: '#/components/schemas/WebhookResponse'
-          - type: 'null'
+        records:
+          items:
+            $ref: '#/components/schemas/Webhook'
+          type: array
+          title: Records
+          description: List of records.
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+          description: Pagination information.
       type: object
       required:
-      - error
-      - response
-      title: WebhookResult
+      - records
+      - pagination
+      title: ResourceList[Webhook]
     NotFoundError:
       properties:
         detail:
@@ -634,22 +619,7 @@ components:
           default: Resource not found
       type: object
       title: NotFoundError
-    WebhookSort:
-      type: string
-      enum:
-      - created_at
-      - updated_at
-      - name
-      title: WebhookSort
-    BadRequestError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Bad Request
-      type: object
-      title: BadRequestError
-    PostWebhook:
+    Webhook:
       properties:
         name:
           type: string
@@ -672,21 +642,54 @@ components:
           type: string
           title: Body
           description: Body of the webhook.
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+          description: Time of record creation.
+        updated_at:
+          type: string
+          format: date-time
+          title: Updated At
+          description: Time of last record update.
+        id:
+          type: string
+          format: uuid
+          title: Id
+          description: The id of the webhook.
+        workspace_id:
+          type: string
+          format: uuid
+          title: Workspace Id
+          description: ID of the parent workspace.
+        last_updated_by_user:
+          anyOf:
+          - $ref: '#/components/schemas/User'
+          - type: 'null'
+          description: Information for user who last updated the webhook.
       type: object
       required:
       - name
       - url
       - body
-      title: PostWebhook
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
+      - created_at
+      - updated_at
+      - id
+      - workspace_id
+      title: Webhook
+    WebhookSort:
+      type: string
+      enum:
+      - created_at
+      - updated_at
+      - name
+      title: WebhookSort
+    SortOrder:
+      type: string
+      enum:
+      - asc
+      - desc
+      title: SortOrder
   securitySchemes:
     OAuth2AuthorizationCode:
       type: oauth2

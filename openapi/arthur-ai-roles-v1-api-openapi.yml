@@ -1,7 +1,10 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Arthur Scope Agents V1 Roles V1 API
   version: 0.1.0
+servers:
+- url: https://platform.arthur.ai/api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 tags:
 - name: Roles V1
 paths:
@@ -49,6 +52,75 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
+    ExtendedRole:
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          title: Created At
+          description: Time of record creation.
+        updated_at:
+          type: string
+          format: date-time
+          title: Updated At
+          description: Time of last record update.
+        id:
+          type: string
+          format: uuid
+          title: Id
+          description: ID of the role.
+        name:
+          type: string
+          title: Name
+          description: Name of the role.
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+          description: Description of the role.
+        organization_bindable:
+          type: boolean
+          title: Organization Bindable
+          description: Whether the role can be bound to an organization.
+        workspace_bindable:
+          type: boolean
+          title: Workspace Bindable
+          description: Whether the role can be bound to a workspace.
+        project_bindable:
+          type: boolean
+          title: Project Bindable
+          description: Whether the role can be bound to a project.
+        data_plane_bindable:
+          type: boolean
+          title: Data Plane Bindable
+          description: Whether the role can be bound to a data plane.
+        permissions:
+          items:
+            $ref: '#/components/schemas/Permission'
+          type: array
+          title: Permissions
+          description: Permissions granted by the role.
+        base_roles:
+          items:
+            $ref: '#/components/schemas/BaseRole'
+          type: array
+          title: Base Roles
+          description: List of IDs of the roles this role inherits permissions from, if any.
+      type: object
+      required:
+      - created_at
+      - updated_at
+      - id
+      - name
+      - description
+      - organization_bindable
+      - workspace_bindable
+      - project_bindable
+      - data_plane_bindable
+      - permissions
+      - base_roles
+      title: ExtendedRole
     ValidationError:
       properties:
         loc:
@@ -75,90 +147,6 @@ components:
       - msg
       - type
       title: ValidationError
-    BaseRole:
-      properties:
-        id:
-          type: string
-          format: uuid
-          title: Id
-          description: ID of the role this role inherits permissions from.
-        name:
-          type: string
-          title: Name
-          description: Name of the role this role inherits permissions from.
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-          description: Description of the role this role inherits permissions from.
-      type: object
-      required:
-      - id
-      - name
-      - description
-      title: BaseRole
-    Permission:
-      properties:
-        name:
-          $ref: '#/components/schemas/PermissionName'
-          description: Name of permission. Must be unique.
-        description:
-          type: string
-          title: Description
-          description: Description of the permission.
-        resource_kind:
-          $ref: '#/components/schemas/ResourceKind'
-          description: Kind of the resource the permission references.
-      type: object
-      required:
-      - name
-      - description
-      - resource_kind
-      title: Permission
-    NotFoundError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Resource not found
-      type: object
-      title: NotFoundError
-    InternalServerError:
-      properties:
-        detail:
-          type: string
-          title: Detail
-          default: Internal server error
-      type: object
-      title: InternalServerError
-    ResourceKind:
-      type: string
-      enum:
-      - platform
-      - organization
-      - workspace
-      - project
-      - model
-      - connector
-      - available_dataset
-      - dataset
-      - role_binding
-      - role
-      - user
-      - group
-      - data_plane_association
-      - data_plane
-      - alert_rule
-      - webhook
-      - custom_aggregation
-      - custom_aggregation_test
-      - agent
-      - policy
-      - policy_alert_rule
-      - policy_attestation_rule
-      - policy_assignment
-      title: ResourceKind
     PermissionName:
       type: string
       enum:
@@ -363,75 +351,33 @@ components:
       - organization_list_agent_llm_models
       - organization_list_models
       title: PermissionName
-    ExtendedRole:
-      properties:
-        created_at:
-          type: string
-          format: date-time
-          title: Created At
-          description: Time of record creation.
-        updated_at:
-          type: string
-          format: date-time
-          title: Updated At
-          description: Time of last record update.
-        id:
-          type: string
-          format: uuid
-          title: Id
-          description: ID of the role.
-        name:
-          type: string
-          title: Name
-          description: Name of the role.
-        description:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Description
-          description: Description of the role.
-        organization_bindable:
-          type: boolean
-          title: Organization Bindable
-          description: Whether the role can be bound to an organization.
-        workspace_bindable:
-          type: boolean
-          title: Workspace Bindable
-          description: Whether the role can be bound to a workspace.
-        project_bindable:
-          type: boolean
-          title: Project Bindable
-          description: Whether the role can be bound to a project.
-        data_plane_bindable:
-          type: boolean
-          title: Data Plane Bindable
-          description: Whether the role can be bound to a data plane.
-        permissions:
-          items:
-            $ref: '#/components/schemas/Permission'
-          type: array
-          title: Permissions
-          description: Permissions granted by the role.
-        base_roles:
-          items:
-            $ref: '#/components/schemas/BaseRole'
-          type: array
-          title: Base Roles
-          description: List of IDs of the roles this role inherits permissions from, if any.
-      type: object
-      required:
-      - created_at
-      - updated_at
-      - id
-      - name
-      - description
-      - organization_bindable
-      - workspace_bindable
-      - project_bindable
-      - data_plane_bindable
-      - permissions
-      - base_roles
-      title: ExtendedRole
+    ResourceKind:
+      type: string
+      enum:
+      - platform
+      - organization
+      - workspace
+      - project
+      - model
+      - connector
+      - available_dataset
+      - dataset
+      - role_binding
+      - role
+      - user
+      - group
+      - data_plane_association
+      - data_plane
+      - alert_rule
+      - webhook
+      - custom_aggregation
+      - custom_aggregation_test
+      - agent
+      - policy
+      - policy_alert_rule
+      - policy_attestation_rule
+      - policy_assignment
+      title: ResourceKind
     HTTPValidationError:
       properties:
         detail:
@@ -441,6 +387,63 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
+    Permission:
+      properties:
+        name:
+          $ref: '#/components/schemas/PermissionName'
+          description: Name of permission. Must be unique.
+        description:
+          type: string
+          title: Description
+          description: Description of the permission.
+        resource_kind:
+          $ref: '#/components/schemas/ResourceKind'
+          description: Kind of the resource the permission references.
+      type: object
+      required:
+      - name
+      - description
+      - resource_kind
+      title: Permission
+    BaseRole:
+      properties:
+        id:
+          type: string
+          format: uuid
+          title: Id
+          description: ID of the role this role inherits permissions from.
+        name:
+          type: string
+          title: Name
+          description: Name of the role this role inherits permissions from.
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+          description: Description of the role this role inherits permissions from.
+      type: object
+      required:
+      - id
+      - name
+      - description
+      title: BaseRole
+    InternalServerError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Internal server error
+      type: object
+      title: InternalServerError
+    NotFoundError:
+      properties:
+        detail:
+          type: string
+          title: Detail
+          default: Resource not found
+      type: object
+      title: NotFoundError
   securitySchemes:
     OAuth2AuthorizationCode:
       type: oauth2
